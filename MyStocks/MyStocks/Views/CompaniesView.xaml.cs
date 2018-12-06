@@ -15,51 +15,51 @@ namespace MyStocks.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CompaniesView : ContentPage
 	{
-        private List<SelectableData<Company>> CompanyList { get; set; }
+        private List<SelectableData<Company>> Companies { get; set; }
 
         public CompaniesView()
         {
             InitializeComponent();
 
-            CompanyList = fillCompaniesList();
-            MyListView.ItemsSource = CompanyList;
+            Companies = fillCompaniesList();
+            CompaniesList.ItemsSource = Companies;
         }
 
 
         private List<SelectableData<Company>> fillCompaniesList()
         {
-            CompanyList = new List<SelectableData<Company>>();
+            Companies = new List<SelectableData<Company>>();
             List<Company> companies = new List<Company>();
 
-            companies.Add(new Company("AMD", "AMD", "amd_logo.png"));
-            companies.Add(new Company("Apple", "AAPL", "apple_logo.png"));
-            companies.Add(new Company("Facebook", "FB", "facebook_logo.png"));
-            companies.Add(new Company("Google", "GOOGL", "google_logo.png"));
-            companies.Add(new Company("Hewlett Packard", "HPE", "hp_logo.png"));
-            companies.Add(new Company("IBM", "IBM", "ibm_logo.png"));
-            companies.Add(new Company("Intel", "INTC", "intel_logo.png"));
-            companies.Add(new Company("Microsoft", "MSFT", "microsoft_logo.png"));
-            companies.Add(new Company("Oracle", "ORCL", "oracle_logo.gif"));
-            companies.Add(new Company("Twitter", "TWTR", "twitter_logo.png"));
+            companies.Add(new Company("AMD", "AMD", "amd.png"));
+            companies.Add(new Company("AAPL", "Apple", "apple.png"));
+            companies.Add(new Company("FB", "Facebook", "facebook.png"));
+            companies.Add(new Company("GOOGL", "Google", "google.png"));
+            companies.Add(new Company("HPE", "Hewlett Packard", "hp.png"));
+            companies.Add(new Company("IBM", "IBM", "ibm.png"));
+            companies.Add(new Company("INTC", "Intel", "intel.png"));
+            companies.Add(new Company("MSFT", "Microsoft", "microsoft.png"));
+            companies.Add(new Company("ORCL", "Oracle", "oracle.png"));
+            companies.Add(new Company("TWTR", "Twitter", "twitter.png"));
 
             for (int i = 0; i < companies.Count; i++)
             {
-                CompanyList.Add(new SelectableData<Company>(companies[i]));
+                Companies.Add(new SelectableData<Company>(companies[i]));
             }
 
-            return CompanyList;
+            return Companies;
         }
 
-        async void Button_Clicked(object sender, EventArgs e)
+        async void GenerateGraphic(object sender, EventArgs e)
         {
             int selected = 0;
             List<Company> selectedCompanies = new List<Company>();
-            for (int i = 0; i < CompanyList.Count; i++)
+            for (int i = 0; i < Companies.Count; i++)
             {
-                if (CompanyList[i].Selected)
+                if (Companies[i].Selected)
                 {
                     selected++;
-                    selectedCompanies.Add(CompanyList[i].Data);
+                    selectedCompanies.Add(Companies[i].Data);
                 }
             }
 

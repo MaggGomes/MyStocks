@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyStocks.Views.CompaniesView"
-             Title ="Companies List">
+             Title ="Companies">
     <Grid RowSpacing="0" ColumnSpacing="0">
 
         <Grid.RowDefinitions>
@@ -10,18 +10,17 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <ListView x:Name="MyListView"
-              ItemsSource="{Binding Items}"
-              CachingStrategy="RecycleElement"
+        <ListView x:Name="CompaniesList"
+                  ItemsSource="{Binding Items}"
+                  CachingStrategy="RecycleElement"
                   Grid.Row="0">
             <ListView.RowHeight>
                 <OnPlatform x:TypeArguments="x:Int32">
-                    <On Platform="Android">70</On>
-                    <On Platform="UWP">150</On>
+                    <On Platform="Android">75</On>
+                    <On Platform="UWP">180</On>
                 </OnPlatform>
             </ListView.RowHeight>
 
-            <!--Built in Cells-->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -35,28 +34,28 @@
 
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="3*" />
                                 <ColumnDefinition Width="100" />
                             </Grid.ColumnDefinitions>
 
-                            <Switch IsToggled="{Binding Selected}" VerticalOptions="Center" Grid.Column="0"/>
-
-                            <StackLayout VerticalOptions="Center" Grid.Column="1">
-                                <Label Text="{Binding Data.Name}"  />
-                                <Label Text="{Binding Data.Symbol}" FontSize="10" />
+                            <StackLayout VerticalOptions="Center"
+                                         Grid.Column="0">
+                                <Label Text="{Binding Data.Name}"
+                                       FontSize="16"  />
+                                <Label Text="{Binding Data.Id}"
+                                       FontSize="12" />
                             </StackLayout>
 
-                            <Image Source="{Binding Data.ImageSource}"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            Aspect="AspectFill"
-                            Grid.Column="2"/>
+                            <Image Source="{Binding Data.Image}"
+                                   Grid.Column="1"
+                                   Aspect="AspectFill"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Text="Create Graph" Grid.Row="1" Clicked="Button_Clicked"></Button>
+        <Button Text="Generate Graphic" Grid.Row="1" Clicked="GenerateGraphic"></Button>
     </Grid>
 </ContentPage>

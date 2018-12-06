@@ -13,7 +13,7 @@ namespace MyStocks
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new CompaniesView());
         }
 
         protected override void OnStart()
