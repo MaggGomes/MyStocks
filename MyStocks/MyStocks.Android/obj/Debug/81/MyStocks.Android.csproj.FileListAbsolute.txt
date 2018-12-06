@@ -102,6 +102,17 @@ C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Xml.pdb
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\res\drawable\amd_logo.png
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\res\drawable\apple_logo.png
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\res\drawable\chart.png
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\res\drawable\facebook_logo.png
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\res\drawable\google_logo.png
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\res\drawable\hp_logo.png
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\res\drawable\ibm_logo.png
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\res\drawable\intel_logo.png
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\res\drawable\microsoft_logo.png
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\res\drawable\oracle_logo.gif
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\res\drawable\twitter_logo.png
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\linksrc\FormsViewGroup.dll.mdb
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\linksrc\MyStocks.dll.mdb
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\linksrc\Xamarin.Forms.Platform.Android.dll.mdb

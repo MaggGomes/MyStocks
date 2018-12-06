@@ -3,10 +3,11 @@ C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\bin\Debug\n
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\bin\Debug\netstandard2.0\MyStocks.pdb
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\MyStocks.csprojAssemblyReference.cache
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\MyStocks.csproj.CoreCompileInputs.cache
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\MyStocks.AssemblyInfoInputs.cache
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\MyStocks.AssemblyInfo.cs
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\MyStocks.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\MyStocks.pdb
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\Views\CompaniesView.xaml.g.cs
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
