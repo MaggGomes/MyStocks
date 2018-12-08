@@ -9,12 +9,6 @@ namespace MyStocks.Models
         public string Id { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
-
-        public Company(string id, string name, string image)
-        {
-            this.Id = id;
-            this.Name = name;
-            this.Image = image;
-        }
+        public bool Selected { get; set; }
     }
 }

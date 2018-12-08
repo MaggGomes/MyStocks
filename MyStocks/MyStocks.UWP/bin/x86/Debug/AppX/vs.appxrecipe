@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-06T01:00:12.320</Modified>
+      <Modified>2018-12-07T01:20:22.730</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\MyStocks.UWP.exe">
       <PackagePath>entrypoint\MyStocks.UWP.exe</PackagePath>
-      <Modified>2018-12-06T01:00:10.906</Modified>
+      <Modified>2018-12-07T01:20:19.890</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.1.5\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
@@ -712,7 +712,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\bin\Debug\netstandard2.0\MyStocks.dll">
       <PackagePath>MyStocks.dll</PackagePath>
-      <Modified>2018-12-06T00:57:33.835</Modified>
+      <Modified>2018-12-07T01:20:12.581</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
@@ -863,11 +863,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-12-06T01:00:10.724</Modified>
+      <Modified>2018-12-07T01:20:19.710</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-12-06T01:00:10.724</Modified>
+      <Modified>2018-12-07T01:20:19.711</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -879,11 +879,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2018-12-06T00:55:15.956</Modified>
+      <Modified>2018-12-07T01:20:21.952</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\Core\MyStocks.UWP.exe">
       <PackagePath>MyStocks.UWP.exe</PackagePath>
-      <Modified>2018-12-06T01:00:12.315</Modified>
+      <Modified>2018-12-07T01:20:22.725</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

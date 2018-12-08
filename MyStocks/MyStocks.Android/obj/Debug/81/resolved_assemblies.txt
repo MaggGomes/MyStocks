@@ -4,6 +4,9 @@ C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\Mono.Android.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\mscorlib.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\MyStocks.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\SkiaSharp.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\SkiaSharp.Views.Android.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\SkiaSharp.Views.Forms.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Core.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Xml.dll
@@ -42,4 +45,5 @@ C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.IO.Compression.FileSystem.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.ComponentModel.Composition.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Web.Services.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Runtime.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\Mono.Security.dll

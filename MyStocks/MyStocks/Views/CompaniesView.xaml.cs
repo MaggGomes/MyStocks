@@ -9,50 +9,32 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using MyStocks.Models;
+using MyStocks.ViewModels;
 
 namespace MyStocks.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CompaniesView : ContentPage
 	{
-        private List<SelectableData<Company>> Companies { get; set; }
+        CompaniesListViewModel companies;
 
         public CompaniesView()
         {
             InitializeComponent();
 
-            Companies = fillCompaniesList();
-            CompaniesList.ItemsSource = Companies;
-        }
-
-
-        private List<SelectableData<Company>> fillCompaniesList()
-        {
-            Companies = new List<SelectableData<Company>>();
-            List<Company> companies = new List<Company>();
-
-            companies.Add(new Company("AMD", "AMD", "amd.png"));
-            companies.Add(new Company("AAPL", "Apple", "apple.png"));
-            companies.Add(new Company("FB", "Facebook", "facebook.png"));
-            companies.Add(new Company("GOOGL", "Google", "google.png"));
-            companies.Add(new Company("HPE", "Hewlett Packard", "hp.png"));
-            companies.Add(new Company("IBM", "IBM", "ibm.png"));
-            companies.Add(new Company("INTC", "Intel", "intel.png"));
-            companies.Add(new Company("MSFT", "Microsoft", "microsoft.png"));
-            companies.Add(new Company("ORCL", "Oracle", "oracle.png"));
-            companies.Add(new Company("TWTR", "Twitter", "twitter.png"));
-
-            for (int i = 0; i < companies.Count; i++)
-            {
-                Companies.Add(new SelectableData<Company>(companies[i]));
-            }
-
-            return Companies;
+            companies = new CompaniesListViewModel();
+            BindingContext = companies;
         }
 
         async void GenerateGraphic(object sender, EventArgs e)
         {
-            int selected = 0;
+            DependencyService.Get<Toast>().Show("dadadasda");
+
+
+            await Navigation.PushAsync(new GraphView());
+
+
+            /*int selected = 0;
             List<Company> selectedCompanies = new List<Company>();
             for (int i = 0; i < Companies.Count; i++)
             {
@@ -74,7 +56,7 @@ namespace MyStocks.Views
             else
             {
                 await DisplayAlert("Valid Selection", "Selected " + selected + " companies", "OK");
-            }
+            }*/
 
         }
     }
