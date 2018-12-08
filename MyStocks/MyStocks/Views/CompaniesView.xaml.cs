@@ -16,12 +16,13 @@ namespace MyStocks.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class CompaniesView : ContentPage
 	{
+        List<Company> companiesSelected = new List<Company>();
         CompaniesListViewModel companies;
 
         public CompaniesView()
         {
             InitializeComponent();
-
+            companiesSelected = new List<Company>();
             companies = new CompaniesListViewModel();
             BindingContext = companies;
         }
@@ -31,33 +32,24 @@ namespace MyStocks.Views
             DependencyService.Get<Toast>().Show("dadadasda");
 
 
-            await Navigation.PushAsync(new GraphView());
+            //await Navigation.PushAsync(new GraphView());
+            companiesSelected = new List<Company>();
 
-
-            /*int selected = 0;
-            List<Company> selectedCompanies = new List<Company>();
-            for (int i = 0; i < Companies.Count; i++)
+            for (int i = 0; i < companies.Companies.Count; i++)
             {
-                if (Companies[i].Selected)
+                if (companies.Companies[i].Selected)
                 {
-                    selected++;
-                    selectedCompanies.Add(Companies[i].Data);
+                    companiesSelected.Add(companies.Companies[i]);
                 }
             }
 
-            if (selected == 0)
+            if(companiesSelected.Count < 1 || companiesSelected.Count > 2)
             {
                 await DisplayAlert("Invalid Selection", "No companies selected", "OK");
-            }
-            else if (selected > 2)
+            } else
             {
-                await DisplayAlert("Invalid Selection", "Can only select up to 2 companies", "OK");
+                await DisplayAlert("Selection", "companies selected", "OK");
             }
-            else
-            {
-                await DisplayAlert("Valid Selection", "Selected " + selected + " companies", "OK");
-            }*/
-
         }
     }
 }

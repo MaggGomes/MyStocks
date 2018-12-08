@@ -33,23 +33,27 @@
                             </Grid.Margin>
 
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60" />
+                                <ColumnDefinition Width="2*" />
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="100" />
                             </Grid.ColumnDefinitions>
 
+                            <Image Source="{Binding Image}"
+                                   Grid.Column="0"
+                                   Margin="0, 0, 10, 0"
+                                   Aspect="AspectFill"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+
                             <StackLayout VerticalOptions="Center"
-                                         Grid.Column="0">
+                                         Grid.Column="1">
                                 <Label Text="{Binding Name}"
                                        FontSize="16"  />
                                 <Label Text="{Binding Id}"
                                        FontSize="12" />
                             </StackLayout>
 
-                            <Image Source="{Binding Image}"
-                                   Grid.Column="1"
-                                   Aspect="AspectFill"
-                                   HorizontalOptions="Center"
-                                   VerticalOptions="Center" />
+                            <Switch IsToggled="{Binding Selected}" VerticalOptions="Center" Grid.Column="2"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

@@ -13,7 +13,7 @@
     </ContentPage.Resources>
     <ScrollView>
         <StackLayout>
-            <skia:SKCanvasView x:Name="HistoryGraph" PaintSurface="OnCanvasViewPaintSurface" HeightRequest="200" Margin="5"/>
+            <!--<skia:SKCanvasView x:Name="HistoryGraph" PaintSurface="OnCanvasViewPaintSurface" HeightRequest="200" Margin="5"/>-->
 
             <StackLayout x:Name="slider">
 

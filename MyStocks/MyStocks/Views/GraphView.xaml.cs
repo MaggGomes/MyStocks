@@ -12,7 +12,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using System.Diagnostics;
-
+using MyStocks.Models;
 
 namespace MyStocks.Views
 {
@@ -75,11 +75,11 @@ namespace MyStocks.Views
                 }
             }
             return min;
-        }*/
+        }
 
         void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         {
-            /*if (!viewModel.CanDraw)
+            if (!viewModel.CanDraw)
                 return;
 
             // Get Metrics
@@ -245,10 +245,10 @@ namespace MyStocks.Views
                     }
                 }
 
-            }*/
+            }
         }
 
-        /*void DrawImage(SKCanvas canvas, string icon, float x, float y)
+        void DrawImage(SKCanvas canvas, string icon, float x, float y)
         {
             Assembly assembly = GetType().GetTypeInfo().Assembly;
             string resourceID = assembly.GetName().Name + "." + icon.Replace("//cdn.apixu.com/", "").Replace("/", ".").Replace("64x64", "_64x64");

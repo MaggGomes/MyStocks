@@ -45,5 +45,4 @@ C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.IO.Compression.FileSystem.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.ComponentModel.Composition.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Web.Services.dll
-C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Runtime.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\Mono.Security.dll

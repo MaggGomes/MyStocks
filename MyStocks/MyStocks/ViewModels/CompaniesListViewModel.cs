@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.ObjectModel;
 
 using MyStocks.Models;
 
@@ -8,16 +6,16 @@ namespace MyStocks.ViewModels
 {
     class CompaniesListViewModel : BaseViewModel
     {
-        public List<Company> Companies { get; set; }
+        public ObservableCollection<Company> Companies { get; set; }
 
         public CompaniesListViewModel()
         {
             Companies = generateCompanies();
         }
 
-        public List<Company> generateCompanies()
+        public ObservableCollection<Company> generateCompanies()
         {
-            List<Company> companiesList = new List<Company>();
+            ObservableCollection<Company> companiesList = new ObservableCollection<Company>();
 
             companiesList.Add(new Company() { Id = "AMD", Name = "AMD", Image = "amd.png", Selected = false });
             companiesList.Add(new Company() { Id="AAPL", Name="Apple", Image="apple.png", Selected = false });
