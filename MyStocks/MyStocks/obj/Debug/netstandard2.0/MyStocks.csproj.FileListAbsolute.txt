@@ -9,5 +9,5 @@ C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\n
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\MyStocks.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\MyStocks.pdb
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\Views\CompaniesView.xaml.g.cs
-C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\Views\HistoryPage.xaml.g.cs
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\obj\Debug\netstandard2.0\Views\HistoryView.xaml.g.cs

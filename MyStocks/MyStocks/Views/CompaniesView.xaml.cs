@@ -17,12 +17,12 @@ namespace MyStocks.Views
 	public partial class CompaniesView : ContentPage
 	{
         List<Company> companiesSelected;
-        CompaniesListViewModel companies;
+        CompaniesViewModel companies;
 
         public CompaniesView()
         {
             InitializeComponent();
-            companies = new CompaniesListViewModel();
+            companies = new CompaniesViewModel();
             BindingContext = companies;
         }
 
@@ -40,11 +40,11 @@ namespace MyStocks.Views
 
             if(companiesSelected.Count < 1 || companiesSelected.Count > 2)
             {
-                await DisplayAlert("Info", "You must choose 1 or 3 companies.", "Ok");
+                await DisplayAlert("Info", "You must choose 1 or 2 companies.", "Ok");
             }
             else
             {
-                await Navigation.PushAsync(new HistoryPage(companiesSelected, "20181002"));
+                await Navigation.PushAsync(new HistoryView(companiesSelected, "20181002"));
             }
         }
     }

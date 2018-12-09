@@ -5,7 +5,7 @@ namespace MyStocks.Models
 {
     public class Company : INotifyPropertyChanged
     {
-        public string Id { get; set; }
+        public string Symbol { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }
         private bool _Selected;

@@ -48,7 +48,7 @@
                             <StackLayout VerticalOptions="Center"
                                          Grid.Column="1">
                                 <Label Text="{Binding Name}"
-                                       FontSize="16"  />
+                                       FontSize="14"  />
                                 <Label Text="{Binding Id}"
                                        FontSize="12" />
                             </StackLayout>

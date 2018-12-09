@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 using SkiaSharp.Views.Forms;
 using SkiaSharp;
 using System.Linq;
-using System.Reflection;
-using System.IO;
 using System.Collections.Generic;
 
 using MyStocks.Models;
@@ -20,21 +18,19 @@ using System.Diagnostics;
 namespace MyStocks.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HistoryPage : ContentPage
+    public partial class HistoryView : ContentPage
     {
         HistoryViewModel viewModel;
         List<Company> CompaniesSelected;
         String date;
 
-        public HistoryPage(List<Company> companies, string date)
+        public HistoryView(List<Company> companies, string date)
         {
             InitializeComponent();
             this.CompaniesSelected = companies;
             this.date = date;
             BindingContext = this.viewModel = new HistoryViewModel(companies, date);
-            viewModel.stockDetails.CollectionChanged += StockDetails_CollectionChanged;
-
-
+            viewModel.CompaniesDetails.CollectionChanged += StockDetails_CollectionChanged;
         }
 
         private void StockDetails_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -42,8 +38,7 @@ namespace MyStocks.Views
             
             if (viewModel.CanDraw)
             {
-                Debug.WriteLine("tamanho teste " + viewModel.stockDetails[0].Count + " lol " + viewModel.CanDraw);
-                HistoryGraph.InvalidateSurface();
+                Graph.InvalidateSurface();
             }
                 
         }
@@ -57,12 +52,12 @@ namespace MyStocks.Views
         private float getMaxValue()
         {
             float max = 0;
-            for(int i=0;i< viewModel.stockDetails.Count; i++)
+            for(int i=0;i< viewModel.CompaniesDetails.Count; i++)
             {
-                for(int j=0;j< viewModel.stockDetails[i].Count; j++)
+                for(int j=0;j< viewModel.CompaniesDetails[i].Count; j++)
                 {
-                    if (viewModel.stockDetails[i][j].close > max)
-                        max = viewModel.stockDetails[i][j].close;
+                    if (viewModel.CompaniesDetails[i][j].close > max)
+                        max = viewModel.CompaniesDetails[i][j].close;
                 }
             }
             return max;
@@ -71,12 +66,12 @@ namespace MyStocks.Views
         private float getMinValue()
         {
             float min = 9999999999;
-            for (int i = 0; i < viewModel.stockDetails.Count; i++)
+            for (int i = 0; i < viewModel.CompaniesDetails.Count; i++)
             {
-                for (int j = 0; j < viewModel.stockDetails[i].Count; j++)
+                for (int j = 0; j < viewModel.CompaniesDetails[i].Count; j++)
                 {
-                    if (viewModel.stockDetails[i][j].close < min)
-                        min = viewModel.stockDetails[i][j].close;
+                    if (viewModel.CompaniesDetails[i][j].close < min)
+                        min = viewModel.CompaniesDetails[i][j].close;
                 }
             }
             return min;
@@ -87,24 +82,21 @@ namespace MyStocks.Views
             if (!viewModel.CanDraw)
                 return;
 
-            // Get Metrics
+            SKImageInfo info = args.Info;
+            SKSurface surface = args.Surface;
+            SKCanvas canvas = surface.Canvas;
+
             var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
-            // Width (in pixels)
             var device_width = mainDisplayInfo.Width;
-            // Height (in pixels)
             var device_height = mainDisplayInfo.Height;
 
             var width_ratio = device_width/720;
             var height_ratio = device_height/1280;
 
-            SKImageInfo info = args.Info;
-            SKSurface surface = args.Surface;
-            SKCanvas canvas = surface.Canvas;
+      
             canvas.Clear();
-            Debug.WriteLine("vou desenhar o canvas");
-            Debug.WriteLine("tamanho 1" + viewModel.stockDetails.Count);
-            var stockDetails = viewModel.stockDetails.ToList();
-            Debug.WriteLine("tamanho 2" + stockDetails.Count);
+            var stockDetails = viewModel.CompaniesDetails.ToList();
+
             if (stockDetails != null)
             {
                 Debug.WriteLine("não é nulo");
@@ -203,14 +195,14 @@ namespace MyStocks.Views
                     using (var path = new SKPath())
                     {
 
-                        var localMinValue = stockDetails[k].OrderBy(x => x.close).First().close - 1;// hourlyConditions.OrderBy(x => x.Temperature).First().Temperature - 2;
+                        var localMinValue = stockDetails[k].OrderBy(x => x.close).First().close - 1;
                         var localMaxValue = stockDetails[k].OrderByDescending(x => x.close).First().close + 1;
                         var localValueDifference = localMaxValue - localMinValue;
 
                         
                         
-                        int x0 = 0;//(int)(2 * horScale);
-                        int y0 = (int)(realVertScale);//(int)((maxTemp - minTemp + 3) * vertScale);
+                        int x0 = 0;
+                        int y0 = (int)(realVertScale);
 
                         invisiblePath.MoveTo(0, y0);
 
@@ -220,14 +212,10 @@ namespace MyStocks.Views
 
                         // Draw Hour Vertical Line
                         canvas.DrawLine(21f * horScale, realVertScale, 21f * horScale, 10, paint);
-
-
                         
-
                         int i;
                         for (i = 0; i < stockDetail.Count; i++)
                         {
-                            // Draw Temperature Line 
                             Debug.WriteLine("tou a desenhar " + stockDetail[i].close);
                             if (i == 0)
                             {
@@ -248,28 +236,7 @@ namespace MyStocks.Views
                         canvas.DrawPath(invisiblePath, invisiblePaint);
                         canvas.DrawPath(invisiblePath, fillColors[k]);
                     }
-                }
-                
-            }
-        }
-
-        void DrawImage(SKCanvas canvas, string icon, float x, float y)
-        {
-            Assembly assembly = GetType().GetTypeInfo().Assembly;
-            string resourceID = assembly.GetName().Name + "." + icon.Replace("//cdn.apixu.com/", "").Replace("/", ".").Replace("64x64", "_64x64");
-
-            using (Stream stream = assembly.GetManifestResourceStream(resourceID))
-            {
-                if (stream != null)
-                {
-                    using (SKManagedStream skStream = new SKManagedStream(stream))
-                    {
-                        var resourceBitmap = SKBitmap.Decode(skStream);
-                        if (x < 0) x = 0;
-                        if (y < 0) y = 0;
-                        canvas.DrawBitmap(resourceBitmap, x, y);
-                    }
-                }
+                } 
             }
         }
     }

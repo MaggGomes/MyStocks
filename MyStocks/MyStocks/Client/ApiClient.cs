@@ -1,20 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Net;
-using System.Text;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+
+using MyStocks.Models;
 
 namespace MyStocks.Client
 {
     class ApiClient
     {
-        private static String baseUrl = "https://marketdata.websol.barchart.com/getHistory.json?";
+        private static HttpClient client = new HttpClient();
+        private static String baseUrl = "https://marketdata.websol.barchart.com/";
+        private static String apiGetQuote = "getQuote.json?";
+        private static String apiGetHistory = "getHistory.json?";
         private static String apiKey = "27575c3133d7d1115e0bc27927d43eba";
-
-        /*public static void getHistory(string code, String date, AsyncCallback callback)
+        
+        public static void getQuote(string id, string date)
         {
-            var uri = string.Format(baseUrl+"apikey={0}&symbol={1}&type=daily&startDate={2}", apiKey, code,date);
+
+        }
+
+
+        public static async Task<ResponseCompaniesHistory> getHistory1(String date, string symbol)
+        {
+            var query = string.Format(baseUrl + "{0}apikey={1}&symbol={2}&type=daily&startDate={3}", apiGetHistory, apiKey, symbol, date);
+            HttpResponseMessage response = await client.GetAsync(query);
+            
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<ResponseCompaniesHistory>(json);
+            }
+           
+            return null;
+        }
+
+
+        public static void getHistory(String date, string id, AsyncCallback callback)
+        {
+            var uri = string.Format(baseUrl + "{0}apikey={1}&symbol={2}&type=daily&startDate={3}", apiGetHistory, apiKey, id, date);
             var state = new State();
             CallWebAsync(uri, state, callback);
         }
@@ -50,6 +76,6 @@ namespace MyStocks.Client
             {
                 state.Response = e.Message;
             }
-        }*/
+        }
     }
 }
