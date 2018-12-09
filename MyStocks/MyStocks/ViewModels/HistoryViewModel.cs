@@ -1,21 +1,21 @@
-﻿//using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
-using Xamarin.Forms;
-
 using MyStocks.Models;
+using MyStocks.Services;
+using Xamarin.Forms;
 
 
 namespace MyStocks.ViewModels
 {
-    /*public class HistoryViewModel : BaseViewModel
+    public class HistoryViewModel : BaseViewModel
     {
-        public ObservableCollection<List<StockDetails>> stockDetails { get; set; }
+        public ObservableCollection<List<CompanyDetails>> stockDetails { get; set; }
         public bool CanDraw { get; set; }
-        List<Company> CompaniesSelected;
+        private List<Company> CompaniesSelected;
         public ObservableCollection<CompanyStock> CompaniesStock { get; set; }
         String date;
 
@@ -61,7 +61,7 @@ namespace MyStocks.ViewModels
             //company = c;
             CompaniesSelected = companies;
             this.date = date;
-            stockDetails = new ObservableCollection<List<StockDetails>>();
+            stockDetails = new ObservableCollection<List<CompanyDetails>>();
             CompaniesStock = new ObservableCollection<CompanyStock>();
         }
 
@@ -73,7 +73,7 @@ namespace MyStocks.ViewModels
             IsBusy = true;
             for(int i=0;i< CompaniesSelected.Count; i++)
             {
-                API.getHistory(CompaniesSelected[i].Symbol, date, LoadHistoryHandler);
+                API.getHistory(CompaniesSelected[i].Id, date, LoadHistoryHandler);
             }
             
         }
@@ -91,7 +91,7 @@ namespace MyStocks.ViewModels
                     Device.BeginInvokeOnMainThread(() => { stockDetails.Clear(); });
                     Debug.WriteLine("rsponse " + state.Response);
                     JObject response = JObject.Parse(state.Response);
-                    List<StockDetails> details = new List<StockDetails>();
+                    List<CompanyDetails> details = new List<CompanyDetails>();
                     foreach (JObject o in response["results"].Children<JObject>())
                     {
                         DateTime date = DateTime.ParseExact((string)o["tradingDay"], "yyyy-MM-dd",null);
@@ -105,7 +105,7 @@ namespace MyStocks.ViewModels
 
                         Debug.WriteLine("recebi " + openValue + " " + highValue + " " + lowValue + " " + closeValue + " " + volume);
 
-                        StockDetails sd = new StockDetails() { date = date, openValue = openValue, highValue = highValue, lowValue = lowValue, closeValue = closeValue, volume = volume };
+                        CompanyDetails sd = new CompanyDetails() { open = openValue, high = highValue, low = lowValue, close = closeValue, volume = volume, date = date, };
                         details.Add(sd);
                         
                     }
@@ -113,9 +113,9 @@ namespace MyStocks.ViewModels
 
                     for (int i=0;i< CompaniesSelected.Count; i++)
                     {
-                        if (CompaniesSelected[i].Symbol == symbol)
+                        if (CompaniesSelected[i].Id == symbol)
                         {
-                            CompanyStock Cs = new CompanyStock() { DisplayName = CompaniesSelected[i].DisplayName, Details = details[0] };
+                            CompanyStock Cs = new CompanyStock() { DisplayName = CompaniesSelected[i].Name, Details = details[0] };
                             CompaniesStock.Add(Cs);
                         }
                     }
@@ -160,5 +160,5 @@ namespace MyStocks.ViewModels
             }
             
         }
-    }*/
+    }
 }

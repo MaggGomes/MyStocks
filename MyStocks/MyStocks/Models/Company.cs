@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace MyStocks.Models
 {
-    class Company : INotifyPropertyChanged
+    public class Company : INotifyPropertyChanged
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -27,11 +27,7 @@ namespace MyStocks.Models
 
         public void OnPropertyChanged(string property)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(property));
-            }      
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
     }
 }

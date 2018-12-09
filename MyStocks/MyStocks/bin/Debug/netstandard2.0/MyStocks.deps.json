@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "99502b5b9dcfc0297256af53423a6c6a57ec626f"
+    "signature": "fa777d85d6a8cf99c79dab9514a47b47b0feffad"
   },
   "compilationOptions": {},
   "targets": {
@@ -10,7 +10,9 @@
       "MyStocks/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "12.0.1",
           "SkiaSharp.Views.Forms": "1.68.0",
+          "Xamarin.Essentials": "1.0.0",
           "Xamarin.Forms": "3.3.0.967583"
         },
         "runtime": {
@@ -21,6 +23,14 @@
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.1.22727"
+          }
         }
       },
       "SkiaSharp/1.68.0": {
@@ -40,6 +50,25 @@
           "lib/netstandard1.3/SkiaSharp.Views.Forms.dll": {
             "assemblyVersion": "1.68.0.0",
             "fileVersion": "1.68.0.0"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Numerics.Vectors.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "Xamarin.Essentials/1.0.0": {
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -81,6 +110,13 @@
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
     },
+    "Newtonsoft.Json/12.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "path": "newtonsoft.json/12.0.1",
+      "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
+    },
     "SkiaSharp/1.68.0": {
       "type": "package",
       "serviceable": true,
@@ -94,6 +130,20 @@
       "sha512": "sha512-As1LklMPgG+i/y/d5z2EGKOheRHrTVsGCz/2HTvhtIL6GFnXDcApKfxTSNhRNi8OyQJoLgODCpQqjm0tY58j1Q==",
       "path": "skiasharp.views.forms/1.68.0",
       "hashPath": "skiasharp.views.forms.1.68.0.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AK4wVgiJqQQCALZ+2ZFY3UqEyIunVlNSBLAHNyI8bJfLT5c9kHZH3nVF2KUWYd1/2POvaz3xx9K6nSKo6m78Ew==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "Xamarin.Essentials/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WZiNlNChkqElCuYEg8rHw8qH1Dz7rnHJyfz831dsMLE+/42Wk1mG662sdgBjsbT/rltvUl8YLcKWgOi8jWlqzw==",
+      "path": "xamarin.essentials/1.0.0",
+      "hashPath": "xamarin.essentials.1.0.0.nupkg.sha512"
     },
     "Xamarin.Forms/3.3.0.967583": {
       "type": "package",

@@ -9,8 +9,8 @@ namespace MyStocks.Models
     {
         public string DisplayName { get; set; }
 
-        private QuoteDetails _Details;
-        public QuoteDetails Details
+        private CompanyDetails _Details;
+        public CompanyDetails Details
         {
             get
             {

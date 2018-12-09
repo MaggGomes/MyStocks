@@ -213,6 +213,15 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -392,6 +401,28 @@
           "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/uap10.0.16299/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/_._": {}
+        }
+      },
+      "Xamarin.Essentials/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.5",
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        }
+      },
       "Xamarin.Forms/3.3.0.967583": {
         "type": "package",
         "dependencies": {
@@ -419,7 +450,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.1",
           "SkiaSharp.Views.Forms": "1.68.0",
+          "Xamarin.Essentials": "1.0.0",
           "Xamarin.Forms": "3.3.0.967583"
         },
         "compile": {
@@ -641,6 +674,15 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -932,6 +974,28 @@
           "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/uap10.0.16299/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/_._": {}
+        }
+      },
+      "Xamarin.Essentials/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.5",
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        }
+      },
       "Xamarin.Forms/3.3.0.967583": {
         "type": "package",
         "dependencies": {
@@ -959,7 +1023,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.1",
           "SkiaSharp.Views.Forms": "1.68.0",
+          "Xamarin.Essentials": "1.0.0",
           "Xamarin.Forms": "3.3.0.967583"
         },
         "compile": {
@@ -1181,6 +1247,15 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.1.5": {
@@ -1473,6 +1548,28 @@
           "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/uap10.0.16299/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/_._": {}
+        }
+      },
+      "Xamarin.Essentials/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.5",
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        }
+      },
       "Xamarin.Forms/3.3.0.967583": {
         "type": "package",
         "dependencies": {
@@ -1500,7 +1597,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.1",
           "SkiaSharp.Views.Forms": "1.68.0",
+          "Xamarin.Essentials": "1.0.0",
           "Xamarin.Forms": "3.3.0.967583"
         },
         "compile": {
@@ -1723,6 +1822,15 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
         "type": "package",
         "dependencies": {
@@ -1830,6 +1938,28 @@
           "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/uap10.0.16299/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/_._": {}
+        }
+      },
+      "Xamarin.Essentials/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.5",
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        }
+      },
       "Xamarin.Forms/3.3.0.967583": {
         "type": "package",
         "dependencies": {
@@ -1857,7 +1987,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.1",
           "SkiaSharp.Views.Forms": "1.68.0",
+          "Xamarin.Essentials": "1.0.0",
           "Xamarin.Forms": "3.3.0.967583"
         },
         "compile": {
@@ -2079,6 +2211,15 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -2370,6 +2511,28 @@
           "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/uap10.0.16299/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/_._": {}
+        }
+      },
+      "Xamarin.Essentials/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.5",
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        }
+      },
       "Xamarin.Forms/3.3.0.967583": {
         "type": "package",
         "dependencies": {
@@ -2397,7 +2560,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.1",
           "SkiaSharp.Views.Forms": "1.68.0",
+          "Xamarin.Essentials": "1.0.0",
           "Xamarin.Forms": "3.3.0.967583"
         },
         "compile": {
@@ -2619,6 +2784,15 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -2911,6 +3085,28 @@
           "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/uap10.0.16299/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/_._": {}
+        }
+      },
+      "Xamarin.Essentials/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.5",
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        }
+      },
       "Xamarin.Forms/3.3.0.967583": {
         "type": "package",
         "dependencies": {
@@ -2938,7 +3134,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.1",
           "SkiaSharp.Views.Forms": "1.68.0",
+          "Xamarin.Essentials": "1.0.0",
           "Xamarin.Forms": "3.3.0.967583"
         },
         "compile": {
@@ -3160,6 +3358,15 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -3451,6 +3658,28 @@
           "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/uap10.0.16299/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/_._": {}
+        }
+      },
+      "Xamarin.Essentials/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.5",
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        }
+      },
       "Xamarin.Forms/3.3.0.967583": {
         "type": "package",
         "dependencies": {
@@ -3478,7 +3707,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.1",
           "SkiaSharp.Views.Forms": "1.68.0",
+          "Xamarin.Essentials": "1.0.0",
           "Xamarin.Forms": "3.3.0.967583"
         },
         "compile": {
@@ -3700,6 +3931,15 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.1.8": {
@@ -3992,6 +4232,28 @@
           "lib/uap10.0/SkiaSharp.Views.Forms.dll": {}
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/uap10.0.16299/_._": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/_._": {}
+        }
+      },
+      "Xamarin.Essentials/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "6.1.5",
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "compile": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0.16299/Xamarin.Essentials.dll": {}
+        }
+      },
       "Xamarin.Forms/3.3.0.967583": {
         "type": "package",
         "dependencies": {
@@ -4019,7 +4281,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Newtonsoft.Json": "12.0.1",
           "SkiaSharp.Views.Forms": "1.68.0",
+          "Xamarin.Essentials": "1.0.0",
           "Xamarin.Forms": "3.3.0.967583"
         },
         "compile": {
@@ -4537,6 +4801,45 @@
         "lib/netstandard1.0/_._",
         "netstandard.library.2.0.3.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/12.0.1": {
+      "sha512": "jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.pdb",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.pdb",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.pdb",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.pdb",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.pdb",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.pdb",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.pdb",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.pdb",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.pdb",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec"
       ]
     },
     "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.1.5": {
@@ -7844,6 +8147,88 @@
         "skiasharp.views.forms.nuspec"
       ]
     },
+    "System.Numerics.Vectors/4.5.0": {
+      "sha512": "AK4wVgiJqQQCALZ+2ZFY3UqEyIunVlNSBLAHNyI8bJfLT5c9kHZH3nVF2KUWYd1/2POvaz3xx9K6nSKo6m78Ew==",
+      "type": "package",
+      "path": "system.numerics.vectors/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Numerics.Vectors.dll",
+        "lib/net46/System.Numerics.Vectors.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Numerics.Vectors.dll",
+        "lib/netstandard1.0/System.Numerics.Vectors.xml",
+        "lib/netstandard2.0/System.Numerics.Vectors.dll",
+        "lib/netstandard2.0/System.Numerics.Vectors.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/System.Numerics.Vectors.dll",
+        "ref/net45/System.Numerics.Vectors.xml",
+        "ref/net46/System.Numerics.Vectors.dll",
+        "ref/net46/System.Numerics.Vectors.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Numerics.Vectors.dll",
+        "ref/netstandard1.0/System.Numerics.Vectors.xml",
+        "ref/netstandard2.0/System.Numerics.Vectors.dll",
+        "ref/netstandard2.0/System.Numerics.Vectors.xml",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.numerics.vectors.4.5.0.nupkg.sha512",
+        "system.numerics.vectors.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Xamarin.Essentials/1.0.0": {
+      "sha512": "WZiNlNChkqElCuYEg8rHw8qH1Dz7rnHJyfz831dsMLE+/42Wk1mG662sdgBjsbT/rltvUl8YLcKWgOi8jWlqzw==",
+      "type": "package",
+      "path": "xamarin.essentials/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid71/Xamarin.Essentials.dll",
+        "lib/monoandroid71/Xamarin.Essentials.pdb",
+        "lib/monoandroid71/Xamarin.Essentials.xml",
+        "lib/monoandroid80/Xamarin.Essentials.dll",
+        "lib/monoandroid80/Xamarin.Essentials.pdb",
+        "lib/monoandroid80/Xamarin.Essentials.xml",
+        "lib/monoandroid81/Xamarin.Essentials.dll",
+        "lib/monoandroid81/Xamarin.Essentials.dll.mdb",
+        "lib/monoandroid81/Xamarin.Essentials.pdb",
+        "lib/monoandroid81/Xamarin.Essentials.xml",
+        "lib/netstandard1.0/Xamarin.Essentials.dll",
+        "lib/netstandard1.0/Xamarin.Essentials.pdb",
+        "lib/netstandard1.0/Xamarin.Essentials.xml",
+        "lib/netstandard2.0/Xamarin.Essentials.dll",
+        "lib/netstandard2.0/Xamarin.Essentials.pdb",
+        "lib/netstandard2.0/Xamarin.Essentials.xml",
+        "lib/uap10.0.16299/Xamarin.Essentials.dll",
+        "lib/uap10.0.16299/Xamarin.Essentials.pdb",
+        "lib/uap10.0.16299/Xamarin.Essentials.pri",
+        "lib/uap10.0.16299/Xamarin.Essentials.xml",
+        "lib/xamarinios10/Xamarin.Essentials.dll",
+        "lib/xamarinios10/Xamarin.Essentials.pdb",
+        "lib/xamarinios10/Xamarin.Essentials.xml",
+        "readme.txt",
+        "xamarin.essentials.1.0.0.nupkg.sha512",
+        "xamarin.essentials.nuspec"
+      ]
+    },
     "Xamarin.Forms/3.3.0.967583": {
       "sha512": "aebAEUHkER6WRo4WpsDd8jq4EudSl3WS4n7Pxcq8ea+x9fHi9PstCU0dU2D5PGvSeKa3yEFSpRljOEjI7qtsNA==",
       "type": "package",
@@ -8002,7 +8387,9 @@
     "UAP,Version=v10.0.16299": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.1.5",
       "MyStocks >= 1.0.0",
+      "Newtonsoft.Json >= 12.0.1",
       "SkiaSharp.Views.Forms >= 1.68.0",
+      "Xamarin.Essentials >= 1.0.0",
       "Xamarin.Forms >= 3.3.0.967583"
     ]
   },
@@ -8051,9 +8438,17 @@
             "target": "Package",
             "version": "[6.1.5, )"
           },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[12.0.1, )"
+          },
           "SkiaSharp.Views.Forms": {
             "target": "Package",
             "version": "[1.68.0, )"
+          },
+          "Xamarin.Essentials": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
