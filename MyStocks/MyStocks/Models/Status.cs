@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyStocks.Models
 {
-    class Status
+    public class Status
     {
         public int code { get; set; }
         public string message { get; set; }

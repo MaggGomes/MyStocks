@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyStocks.Models
 {
-    class ResponseCompaniesHistory
+    public class ResponseCompaniesHistory
     {
         public Status status { get; set; }
         public List<CompanyDetails> results { get; set; }

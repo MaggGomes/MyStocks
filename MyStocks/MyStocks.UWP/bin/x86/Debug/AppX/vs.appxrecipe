@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-09T20:22:03.413</Modified>
+      <Modified>2018-12-11T20:33:19.046</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\MyStocks.UWP.exe">
       <PackagePath>entrypoint\MyStocks.UWP.exe</PackagePath>
-      <Modified>2018-12-09T20:22:02.670</Modified>
+      <Modified>2018-12-11T20:33:18.385</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\.nuget\packages\newtonsoft.json\12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -748,7 +748,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\bin\Debug\netstandard2.0\MyStocks.dll">
       <PackagePath>MyStocks.dll</PackagePath>
-      <Modified>2018-12-09T20:21:57.772</Modified>
+      <Modified>2018-12-11T20:33:13.428</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
@@ -899,11 +899,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-12-09T20:22:02.512</Modified>
+      <Modified>2018-12-11T20:33:18.210</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-12-09T20:22:02.513</Modified>
+      <Modified>2018-12-11T20:33:18.211</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -919,7 +919,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\Core\MyStocks.UWP.exe">
       <PackagePath>MyStocks.UWP.exe</PackagePath>
-      <Modified>2018-12-09T20:22:03.408</Modified>
+      <Modified>2018-12-11T20:33:19.042</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
