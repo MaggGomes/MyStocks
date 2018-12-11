@@ -35,8 +35,10 @@ namespace MyStocks.Views
 
         private void StockDetails_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
+            Debug.WriteLine("colleantes");
             if (!history.Loading)
             {
+                Debug.WriteLine("coldepois");
                 Graph.InvalidateSurface();
             }
                 
@@ -77,6 +79,9 @@ namespace MyStocks.Views
             base.OnAppearing();
             await history.GetHistory();
             Debug.WriteLine("bbbb");
+
+            history.Loading = false;
+            Graph.InvalidateSurface();
             //await Task.Factory.StartNew(async () => { await history.GetHistory(); });
         }
 
