@@ -44,11 +44,8 @@ namespace MyStocks.ViewModels
                 }
             }
 
-            Device.BeginInvokeOnMainThread(() =>
-            {
-                Loading = false;
-                CompaniesHistory = responses;
-            });
+            Loading = false;
+            CompaniesHistory = responses;
         }
     }
 }

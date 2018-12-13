@@ -4,7 +4,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 
-using System.Threading.Tasks;
 using SkiaSharp.Views.Forms;
 using SkiaSharp;
 using System.Linq;
@@ -12,8 +11,6 @@ using System.Collections.Generic;
 
 using MyStocks.Models;
 using MyStocks.ViewModels;
-
-using System.Diagnostics;
 
 namespace MyStocks.Views
 {
@@ -30,21 +27,9 @@ namespace MyStocks.Views
             this.CompaniesSelected = companies;
             this.date = date;
             BindingContext = this.history = new HistoryViewModel(companies, date);
-            history.CompaniesHistory.CollectionChanged += StockDetails_CollectionChanged;
-        }
-
-        private void StockDetails_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
-        {
-            Debug.WriteLine("colleantes");
-            if (!history.Loading)
-            {
-                Debug.WriteLine("coldepois");
-                Graph.InvalidateSurface();
-            }
-                
         }
         
-        private float getMaxValue()
+        private float getMax()
         {
             float max = 0;
             
@@ -59,7 +44,7 @@ namespace MyStocks.Views
             return max;
         }
 
-        private float getMinValue()
+        private float getMin()
         {
             float min = 9999999999;
             for (int i = 0; i < history.CompaniesHistory.Count; i++)
@@ -75,173 +60,168 @@ namespace MyStocks.Views
 
         protected async override void OnAppearing()
         {
-            Debug.WriteLine("aaaaaaa");
             base.OnAppearing();
             await history.GetHistory();
-            Debug.WriteLine("bbbb");
-
-            history.Loading = false;
             Graph.InvalidateSurface();
-            //await Task.Factory.StartNew(async () => { await history.GetHistory(); });
         }
 
         void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         {
-            Debug.WriteLine("cccc");
-
             if (history.Loading)
                 return;
 
+            var companies = history.CompaniesHistory.ToList();
 
-            Debug.WriteLine("chegou");
+            if (companies.Count == 0 || companies == null)
+                return;
 
             SKImageInfo info = args.Info;
             SKSurface surface = args.Surface;
             SKCanvas canvas = surface.Canvas;
 
-            var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
-            var device_width = mainDisplayInfo.Width;
-            var device_height = mainDisplayInfo.Height;
-
-            var width_ratio = device_width/720;
-            var height_ratio = device_height/1280;
-
-      
+            // Clears canvas
             canvas.Clear();
-            var stockDetails = history.CompaniesHistory.ToList();
 
-            if (stockDetails != null && stockDetails.Count > 0)
+            // Colors   
+            SKPaint grayColor = new SKPaint
             {
-                SKPaint paint = new SKPaint
+                Style = SKPaintStyle.Stroke,
+                Color = Color.Gray.ToSKColor(),
+                StrokeWidth = 1
+            };
+
+            SKPaint lightGrayColor = new SKPaint
+            {
+                Style = SKPaintStyle.Stroke,
+                Color = Color.LightGray.ToSKColor(),
+                StrokeWidth = 1
+            };
+
+            SKPaint yellowColor = new SKPaint
+            {
+                Style = SKPaintStyle.Fill,
+                Color = Color.FromRgba(240, 236, 213, 180).ToSKColor(),
+            };
+
+            SKPaint blueColor = new SKPaint
+            {
+                Style = SKPaintStyle.Fill,
+                Color = Color.FromRgba(219, 237, 242, 180).ToSKColor()
+            };
+
+            SKPaint yellowTrace = new SKPaint
+            {
+                Style = SKPaintStyle.Stroke,
+                Color = Color.FromRgba(230, 201, 75, 255).ToSKColor(),
+                StrokeWidth = 4
+            };
+
+            SKPaint blueTrace = new SKPaint
+            {
+                Style = SKPaintStyle.Stroke,
+                Color = Color.FromRgba(45, 195, 214, 255).ToSKColor(),
+                StrokeWidth = 4
+            };
+
+            SKPaint white = new SKPaint
+            {
+                Style = SKPaintStyle.Stroke,
+                Color = Color.FromRgba(255, 255, 255, 0).ToSKColor(),
+                StrokeWidth = 1
+            };
+
+            SKPaint textColor = new SKPaint
+            {
+                Style = SKPaintStyle.Fill,
+                Color = Color.Black.ToSKColor(),
+                TextSize = 30,
+                TextAlign = SKTextAlign.Center
+            };
+
+            SKPaint yAxis = new SKPaint
+            {
+                Style = SKPaintStyle.Fill,
+                Color = Color.Gray.ToSKColor(),
+                TextSize = 10
+            };
+
+            List<SKPaint> fillColors = new List<SKPaint>();
+            fillColors.Add(yellowColor);
+            fillColors.Add(blueColor);
+
+            List<SKPaint> traceColors = new List<SKPaint>();
+            traceColors.Add(yellowTrace);
+            traceColors.Add(blueTrace);
+
+            // Get Metrics
+            var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
+
+            // Width (in pixels)
+            var width = mainDisplayInfo.Width;
+
+            // Height (in pixels)
+            var height = mainDisplayInfo.Height;
+
+            var width_ratio = width/720;
+            var height_ratio = height/1280;
+            
+            var minValue = getMin() - 1;
+            var maxValue = getMax() + 1;
+            var valueDifference = maxValue - minValue;
+            var horScale = 20f * (float)width_ratio;
+            var vertScale = 200f * (float)height_ratio;
+            var realVertScale = vertScale + 10 * (float)height_ratio;
+
+            for (int j = 0; j < 5; j++)
+            {
+                canvas.DrawText((minValue + (j * valueDifference) / 4).ToString(), 21f * horScale, (vertScale * ((4 - j) / (float)4)) + 14, yAxis);
+                canvas.DrawLine(0, (vertScale * ((4 - j) / (float)4)) + 10, 21f * horScale, (vertScale * ((4 - j) / (float)4)) + 10, lightGrayColor);
+            }
+
+            for (int k = 0; k < companies.Count; k++)
+            {
+                var company = companies[k];
+
+                var invisiblePath = new SKPath();
+                using (var path = new SKPath())
                 {
-                    Style = SKPaintStyle.Stroke,
-                    Color = Color.Gray.ToSKColor(),
-                    StrokeWidth = 1
-                };
+                    var localMinValue = companies[k].results.OrderBy(x => x.close).First().close - 1;
+                    var localMaxValue = companies[k].results.OrderByDescending(x => x.close).First().close + 1;
+                    var localValueDifference = localMaxValue - localMinValue;
 
-                SKPaint cyanTracePaint = new SKPaint
-                {
-                    Style = SKPaintStyle.Stroke,
-                    Color = Color.FromRgba(0, 255, 255, 255).ToSKColor(),
-                    StrokeWidth = 1
-                };
+                    int x0 = 0;
+                    int y0 = (int)(realVertScale);
 
-                SKPaint yellowTracePaint = new SKPaint
-                {
-                    Style = SKPaintStyle.Stroke,
-                    Color = Color.FromRgba(255, 255, 0, 255).ToSKColor(),
-                    StrokeWidth = 1
-                };
+                    invisiblePath.MoveTo(0, y0);
 
-                SKPaint invisiblePaint = new SKPaint
-                {
-                    Style = SKPaintStyle.Stroke,
-                    Color = Color.FromRgba(255,255,255,0).ToSKColor(),
-                    StrokeWidth = 1
-                };
+                    // Draw Horizontal Axis
+                    canvas.DrawLine(x0, y0, 21f * horScale, y0, grayColor);
 
-                SKPaint textPaint = new SKPaint
-                {
-                    Style = SKPaintStyle.Fill,
-                    Color = Color.Black.ToSKColor(),
-                    TextSize = 30,
-                    TextAlign = SKTextAlign.Center
-                };
-
-                SKPaint redColor = new SKPaint
-                {
-                    Style = SKPaintStyle.Fill,
-                    Color = Color.FromRgba(223, 112, 112, 200).ToSKColor(),
-                    TextSize = 10,
-                    //TextAlign = SKTextAlign.Center
-                };
-
-                SKPaint blueColor = new SKPaint
-                {
-                    Style = SKPaintStyle.Fill,
-                    Color = Color.FromRgba(86, 153, 235, 200).ToSKColor(),
-                    TextSize = 10,
-                    //TextAlign = SKTextAlign.Center
-                };
-
-                SKPaint scalePaint = new SKPaint
-                {
-                    Style = SKPaintStyle.Fill,
-                    Color = Color.Gray.ToSKColor(),
-                    TextSize = 20,
-                    //TextAlign = SKTextAlign.Center
-                };
-                
-                List<SKPaint> fillColors = new List<SKPaint>();
-                fillColors.Add(redColor);
-                fillColors.Add(blueColor);
-
-                List<SKPaint> traceColors = new List<SKPaint>();
-                traceColors.Add(cyanTracePaint);
-                traceColors.Add(yellowTracePaint);
-
-                var minValue = getMinValue() - 1;
-                var maxValue = getMaxValue() + 1;
-                var valueDifference = maxValue - minValue;
-                var horScale = 30f * (float)width_ratio;
-                var vertScale = 200f * (float)height_ratio;
-                var realVertScale = vertScale + 10 * (float)height_ratio;
-
-                for (int j = 0; j < 5; j++)
-                {
-                    canvas.DrawText((minValue + (j * valueDifference) / 4).ToString(), 21f * horScale, (vertScale * ((4 - j) / (float)4)) + 14, scalePaint);
-                }
-
-                for (int k = 0;k< stockDetails.Count; k++)
-                {
-
-                    var stockDetail = stockDetails[k];
-
-                    var invisiblePath = new SKPath();
-                    using (var path = new SKPath())
-                    {
-                        var localMinValue = stockDetails[k].results.OrderBy(x => x.close).First().close - 1;
-                        var localMaxValue = stockDetails[k].results.OrderByDescending(x => x.close).First().close + 1;
-                        var localValueDifference = localMaxValue - localMinValue;
+                    // Draw Vertical Line
+                    canvas.DrawLine(21f * horScale, realVertScale, 21f * horScale, 10, grayColor);
                     
-                        int x0 = 0;
-                        int y0 = (int)(realVertScale);
+                    int i;
 
-                        invisiblePath.MoveTo(0, y0);
-
-                        // Draw Horizontal Axis
-                        canvas.DrawLine(x0, y0, 21f * horScale, y0, paint);
-                        Debug.WriteLine("tamanho " + stockDetail.results.Count);
-
-                        // Draw Vertical Line
-                        canvas.DrawLine(21f * horScale, realVertScale, 21f * horScale, 10, paint);
-
-
-                        int i;
-
-                        for (i = 0; i < stockDetail.results.Count; i++)
+                    for (i = 0; i < company.results.Count; i++)
+                    {
+                        if (i == 0)
                         {
-                            Debug.WriteLine("tou a desenhar " + stockDetail.results[i].close);
-                            if (i == 0)
-                            {
-                                path.MoveTo(i * (21f * horScale) / (stockDetail.results.Count - 1), ((stockDetail.results[i].close - localMinValue) * vertScale / localValueDifference) + (realVertScale - vertScale));
-                            }
-                            else
-                            {
-                                path.LineTo(i * (21f * horScale) / (stockDetail.results.Count - 1), ((stockDetail.results[i].close - localMinValue) * vertScale / localValueDifference) + (realVertScale - vertScale));
-                            }
-                            invisiblePath.LineTo(i * (21f * horScale) / (stockDetail.results.Count - 1), ((stockDetail.results[i].close - localMinValue) * vertScale / localValueDifference) + (realVertScale - vertScale));
-
+                            path.MoveTo(i * (21f * horScale) / (company.results.Count - 1), ((company.results[i].close - localMinValue) * vertScale / localValueDifference) + (realVertScale - vertScale));
                         }
-
-                        paint.Color = Color.Blue.ToSKColor();
-                        paint.StrokeWidth = 2;
-                        canvas.DrawPath(path, traceColors[k]);
-                        invisiblePath.LineTo(i * (21f * horScale) / (stockDetail.results.Count), vertScale + (realVertScale - vertScale));
-                        canvas.DrawPath(invisiblePath, invisiblePaint);
-                        canvas.DrawPath(invisiblePath, fillColors[k]);
+                        else
+                        {
+                            path.LineTo(i * (21f * horScale) / (company.results.Count - 1), ((company.results[i].close - localMinValue) * vertScale / localValueDifference) + (realVertScale - vertScale));
+                        }
+                        invisiblePath.LineTo(i * (21f * horScale) / (company.results.Count - 1), ((company.results[i].close - localMinValue) * vertScale / localValueDifference) + (realVertScale - vertScale));
                     }
-                } 
+
+                    grayColor.Color = Color.Black.ToSKColor();
+                    grayColor.StrokeWidth = 2;
+                    canvas.DrawPath(path, traceColors[k]);
+                    invisiblePath.LineTo(i * (21f * horScale) / (company.results.Count), vertScale + (realVertScale - vertScale));
+                    canvas.DrawPath(invisiblePath, white);
+                    canvas.DrawPath(invisiblePath, fillColors[k]);
+                }
             }
         }
     }
