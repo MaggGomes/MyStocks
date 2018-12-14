@@ -131,7 +131,7 @@ namespace MyStocks.Views
             {
                 Style = SKPaintStyle.Fill,
                 Color = Color.Gray.ToSKColor(),
-                TextSize = 10
+                TextSize = 14
             };
 
             SKPaint axisColor = new SKPaint
@@ -160,13 +160,14 @@ namespace MyStocks.Views
 
             var width_ratio = width/720;
             var height_ratio = height/1280;
+
+            Debug.WriteLine(width);
+            Debug.WriteLine(21f*(21f * (float)width_ratio));
             
-            var minValue = 0;
-            var maxValue = getMax() + 1;
-            var valueDifference = maxValue - minValue;
-            var horScale = 20f * (float)width_ratio;
-            var vertScale = 200f * (float)height_ratio;
-            var realVertScale = vertScale + 10 * (float)height_ratio;
+            var valueSize = getMax();
+            var chartWidth = 21f * (float)width_ratio;
+            var chartHeight = (float)height / 2;
+            var realChartHeight = chartHeight + 10 * (float)height_ratio;
 
             for (int k = 0; k < companies.Count; k++)
             {
@@ -175,40 +176,39 @@ namespace MyStocks.Views
                 var invisiblePath = new SKPath();
                 using (var path = new SKPath())
                 {
-                    var localMinValue = companies[k].results.OrderBy(x => x.close).First().close - 1;
-                    var localMaxValue = companies[k].results.OrderByDescending(x => x.close).First().close + 1;
-                    var localValueDifference = localMaxValue - localMinValue;
-
-                    int x0 = 0;
-                    int y0 = (int)(realVertScale);
-
-                    invisiblePath.MoveTo(0, y0);
-
-                    // Draw Horizontal Axis
-                    canvas.DrawLine(x0, y0, 21f * horScale, y0, axisColor);
+                    int startingPointX = 0;
+                    int startingPointY = (int)(realChartHeight);
+                    var minQuote = companies[k].results.OrderBy(x => x.close).First().close - 1;
+                    var maxQuote = companies[k].results.OrderByDescending(x => x.close).First().close + 1;
+                    var quoteDiff = maxQuote - minQuote;
 
                     // Draw Vertical Line
-                    canvas.DrawLine(21f * horScale, realVertScale, 21f * horScale, 10, axisColor);
+                    canvas.DrawLine(21f * chartWidth, realChartHeight, 21f * chartWidth, 10, axisColor);
+
+                    // Draw Horizontal Axis
+                    canvas.DrawLine(startingPointX, startingPointY, 21f * chartWidth, startingPointY, axisColor);
+
+                    invisiblePath.MoveTo(0, startingPointY);
                     
                     int i;
 
                     for (i = 0; i < company.results.Count; i++)
                     {
+                        invisiblePath.LineTo(i * (21f * chartWidth) / (company.results.Count - 1), ((company.results[i].close - minQuote) * chartHeight / quoteDiff) + (realChartHeight - chartHeight));
+
                         if (i == 0)
                         {
-                            path.MoveTo(i * (21f * horScale) / (company.results.Count - 1), ((company.results[i].close - localMinValue) * vertScale / localValueDifference) + (realVertScale - vertScale));
+                            path.MoveTo(i * (21f * chartWidth) / (company.results.Count - 1), ((company.results[i].close - minQuote) * chartHeight / quoteDiff) + (realChartHeight - chartHeight));
                         }
+
                         else
                         {
-                            path.LineTo(i * (21f * horScale) / (company.results.Count - 1), ((company.results[i].close - localMinValue) * vertScale / localValueDifference) + (realVertScale - vertScale));
+                            path.LineTo(i * (21f * chartWidth) / (company.results.Count - 1), ((company.results[i].close - minQuote) * chartHeight / quoteDiff) + (realChartHeight - chartHeight));
                         }
-                        invisiblePath.LineTo(i * (21f * horScale) / (company.results.Count - 1), ((company.results[i].close - localMinValue) * vertScale / localValueDifference) + (realVertScale - vertScale));
                     }
-
-                    grayColor.Color = Color.Black.ToSKColor();
-                    grayColor.StrokeWidth = 2;
+                    
                     canvas.DrawPath(path, traceColors[k]);
-                    invisiblePath.LineTo(i * (21f * horScale) / (company.results.Count), vertScale + (realVertScale - vertScale));
+                    invisiblePath.LineTo(i * (21f * chartWidth) / (company.results.Count), chartHeight + (realChartHeight - chartHeight));
                     canvas.DrawPath(invisiblePath, white);
                     canvas.DrawPath(invisiblePath, fillColors[k]);
                 }
@@ -217,14 +217,14 @@ namespace MyStocks.Views
             // X axis labels
             for (int i = 0; i < 6; i++)
             {
-                canvas.DrawText(companies[0].results[0].timestamp.ToString("MM/dd/yyyy"), 0+i*((21f * horScale)/(float)6), vertScale +30, smallTextColor);
+                canvas.DrawText(companies[0].results[0].timestamp.ToString("MM/dd/yyyy"), 0+i*((21f * chartWidth)/(float)6), chartHeight +30, smallTextColor);
             }
             
             // Y axis labels
             for (int i = 0; i < 6; i++)
             {
-                canvas.DrawText(Math.Round((minValue + (i * valueDifference) / 5), 2).ToString(), 21f * horScale+10, (vertScale * ((5 - i) / (float)5)) + 15, textColor);
-                canvas.DrawLine(0, (vertScale * ((5 - i) / (float)5)) + 10, 21f * horScale, (vertScale * ((5 - i) / (float)5)) + 10, lightGrayColor);
+                canvas.DrawText(Math.Round((i * valueSize) / 5, 2).ToString(), 21f * chartWidth+10, (chartHeight * ((5 - i) / (float)5)) + 15, textColor);
+                canvas.DrawLine(0, (chartHeight * ((5 - i) / (float)5)) + 10, 21f * chartWidth, (chartHeight * ((5 - i) / (float)5)) + 10, lightGrayColor);
             }
         }
     }
