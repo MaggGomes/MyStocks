@@ -44,7 +44,7 @@ namespace MyStocks.Views
             }
             else
             {
-                await Navigation.PushAsync(new HistoryView(companiesSelected, "20181002"));
+                await Navigation.PushAsync(new HistoryView(companiesSelected, "20181002", 7));
             }
         }
     }

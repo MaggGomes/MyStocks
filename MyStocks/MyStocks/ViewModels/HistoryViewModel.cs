@@ -2,15 +2,10 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net;
 using System.Threading.Tasks;
 
 using MyStocks.Models;
 using MyStocks.Client;
-
-using Xamarin.Forms;
-
 
 namespace MyStocks.ViewModels
 {

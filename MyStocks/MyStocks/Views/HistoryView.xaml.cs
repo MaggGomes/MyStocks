@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using MyStocks.Models;
 using MyStocks.ViewModels;
 
+using System.Diagnostics;
+
 namespace MyStocks.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -20,49 +22,37 @@ namespace MyStocks.Views
         HistoryViewModel history;
         List<Company> CompaniesSelected;
         String date;
+        int numberOfPoints;
 
-        public HistoryView(List<Company> companies, string date)
+        public HistoryView(List<Company> companies, string date, int numberOfPoints)
         {
             InitializeComponent();
             this.CompaniesSelected = companies;
             this.date = date;
+            this.numberOfPoints = numberOfPoints;
             BindingContext = this.history = new HistoryViewModel(companies, date);
         }
         
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+            await history.GetHistory();
+            Graph.InvalidateSurface();
+        }
+
         private float getMax()
         {
             float max = 0;
-            
-            for(int i=0;i< history.CompaniesHistory.Count; i++)
+
+            for (int i = 0; i < history.CompaniesHistory.Count; i++)
             {
-                for(int j=0; j< history.CompaniesHistory[i].results.Count; j++)
+                for (int j = 0; j < history.CompaniesHistory[i].results.Count; j++)
                 {
                     if (history.CompaniesHistory[i].results[j].close > max)
                         max = history.CompaniesHistory[i].results[j].close;
                 }
             }
             return max;
-        }
-
-        private float getMin()
-        {
-            float min = 9999999999;
-            for (int i = 0; i < history.CompaniesHistory.Count; i++)
-            {
-                for (int j = 0; j < history.CompaniesHistory[i].results.Count; j++)
-                {
-                    if (history.CompaniesHistory[i].results[j].close < min)
-                        min = history.CompaniesHistory[i].results[j].close;
-                }
-            }
-            return min;
-        }
-
-        protected async override void OnAppearing()
-        {
-            base.OnAppearing();
-            await history.GetHistory();
-            Graph.InvalidateSurface();
         }
 
         void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -133,12 +123,18 @@ namespace MyStocks.Views
             SKPaint textColor = new SKPaint
             {
                 Style = SKPaintStyle.Fill,
-                Color = Color.Black.ToSKColor(),
-                TextSize = 30,
-                TextAlign = SKTextAlign.Center
+                Color = Color.Gray.ToSKColor(),
+                TextSize = 20
             };
 
-            SKPaint yAxis = new SKPaint
+            SKPaint smallTextColor = new SKPaint
+            {
+                Style = SKPaintStyle.Fill,
+                Color = Color.Gray.ToSKColor(),
+                TextSize = 10
+            };
+
+            SKPaint axisColor = new SKPaint
             {
                 Style = SKPaintStyle.Fill,
                 Color = Color.Gray.ToSKColor(),
@@ -165,18 +161,12 @@ namespace MyStocks.Views
             var width_ratio = width/720;
             var height_ratio = height/1280;
             
-            var minValue = getMin() - 1;
+            var minValue = 0;
             var maxValue = getMax() + 1;
             var valueDifference = maxValue - minValue;
             var horScale = 20f * (float)width_ratio;
             var vertScale = 200f * (float)height_ratio;
             var realVertScale = vertScale + 10 * (float)height_ratio;
-
-            for (int j = 0; j < 5; j++)
-            {
-                canvas.DrawText((minValue + (j * valueDifference) / 4).ToString(), 21f * horScale, (vertScale * ((4 - j) / (float)4)) + 14, yAxis);
-                canvas.DrawLine(0, (vertScale * ((4 - j) / (float)4)) + 10, 21f * horScale, (vertScale * ((4 - j) / (float)4)) + 10, lightGrayColor);
-            }
 
             for (int k = 0; k < companies.Count; k++)
             {
@@ -195,10 +185,10 @@ namespace MyStocks.Views
                     invisiblePath.MoveTo(0, y0);
 
                     // Draw Horizontal Axis
-                    canvas.DrawLine(x0, y0, 21f * horScale, y0, grayColor);
+                    canvas.DrawLine(x0, y0, 21f * horScale, y0, axisColor);
 
                     // Draw Vertical Line
-                    canvas.DrawLine(21f * horScale, realVertScale, 21f * horScale, 10, grayColor);
+                    canvas.DrawLine(21f * horScale, realVertScale, 21f * horScale, 10, axisColor);
                     
                     int i;
 
@@ -222,6 +212,19 @@ namespace MyStocks.Views
                     canvas.DrawPath(invisiblePath, white);
                     canvas.DrawPath(invisiblePath, fillColors[k]);
                 }
+            }
+
+            // X axis labels
+            for (int i = 0; i < 6; i++)
+            {
+                canvas.DrawText(companies[0].results[0].timestamp.ToString("MM/dd/yyyy"), 0+i*((21f * horScale)/(float)6), vertScale +30, smallTextColor);
+            }
+            
+            // Y axis labels
+            for (int i = 0; i < 6; i++)
+            {
+                canvas.DrawText(Math.Round((minValue + (i * valueDifference) / 5), 2).ToString(), 21f * horScale+10, (vertScale * ((5 - i) / (float)5)) + 15, textColor);
+                canvas.DrawLine(0, (vertScale * ((5 - i) / (float)5)) + 10, 21f * horScale, (vertScale * ((5 - i) / (float)5)) + 10, lightGrayColor);
             }
         }
     }
