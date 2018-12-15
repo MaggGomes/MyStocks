@@ -157,17 +157,10 @@ namespace MyStocks.Views
 
             // Height (in pixels)
             var height = mainDisplayInfo.Height;
-
-            var width_ratio = width/720;
-            var height_ratio = height/1280;
-
-            Debug.WriteLine(width);
-            Debug.WriteLine(21f*(21f * (float)width_ratio));
             
             var valueSize = getMax();
-            var chartWidth = 21f * (float)width_ratio;
+            var chartWidth = (float)width-100f;
             var chartHeight = (float)height / 2;
-            var realChartHeight = chartHeight + 10 * (float)height_ratio;
 
             for (int k = 0; k < companies.Count; k++)
             {
@@ -176,39 +169,29 @@ namespace MyStocks.Views
                 var invisiblePath = new SKPath();
                 using (var path = new SKPath())
                 {
-                    int startingPointX = 0;
-                    int startingPointY = (int)(realChartHeight);
-                    var minQuote = companies[k].results.OrderBy(x => x.close).First().close - 1;
-                    var maxQuote = companies[k].results.OrderByDescending(x => x.close).First().close + 1;
+                    var minQuote = companies[k].results.OrderBy(x => x.close).First().close;
+                    var maxQuote = companies[k].results.OrderByDescending(x => x.close).First().close;
                     var quoteDiff = maxQuote - minQuote;
 
-                    // Draw Vertical Line
-                    canvas.DrawLine(21f * chartWidth, realChartHeight, 21f * chartWidth, 10, axisColor);
-
-                    // Draw Horizontal Axis
-                    canvas.DrawLine(startingPointX, startingPointY, 21f * chartWidth, startingPointY, axisColor);
-
-                    invisiblePath.MoveTo(0, startingPointY);
+                    invisiblePath.MoveTo(0, (int)chartHeight);
                     
-                    int i;
-
-                    for (i = 0; i < company.results.Count; i++)
+                    for (int i = 0; i < company.results.Count; i++)
                     {
-                        invisiblePath.LineTo(i * (21f * chartWidth) / (company.results.Count - 1), ((company.results[i].close - minQuote) * chartHeight / quoteDiff) + (realChartHeight - chartHeight));
+                        invisiblePath.LineTo(i * chartWidth / (company.results.Count - 1), ((company.results[i].close - minQuote) * chartHeight / quoteDiff));
 
                         if (i == 0)
                         {
-                            path.MoveTo(i * (21f * chartWidth) / (company.results.Count - 1), ((company.results[i].close - minQuote) * chartHeight / quoteDiff) + (realChartHeight - chartHeight));
+                            path.MoveTo(i * chartWidth / (company.results.Count - 1), ((company.results[i].close - minQuote) * chartHeight / quoteDiff));
                         }
 
                         else
                         {
-                            path.LineTo(i * (21f * chartWidth) / (company.results.Count - 1), ((company.results[i].close - minQuote) * chartHeight / quoteDiff) + (realChartHeight - chartHeight));
+                            path.LineTo(i * chartWidth / (company.results.Count - 1), ((company.results[i].close - minQuote) * chartHeight / quoteDiff));
                         }
                     }
-                    
+                
+                    invisiblePath.LineTo(company.results.Count * chartWidth / (company.results.Count), chartHeight);
                     canvas.DrawPath(path, traceColors[k]);
-                    invisiblePath.LineTo(i * (21f * chartWidth) / (company.results.Count), chartHeight + (realChartHeight - chartHeight));
                     canvas.DrawPath(invisiblePath, white);
                     canvas.DrawPath(invisiblePath, fillColors[k]);
                 }
@@ -217,14 +200,14 @@ namespace MyStocks.Views
             // X axis labels
             for (int i = 0; i < 6; i++)
             {
-                canvas.DrawText(companies[0].results[0].timestamp.ToString("MM/dd/yyyy"), 0+i*((21f * chartWidth)/(float)6), chartHeight +30, smallTextColor);
+                canvas.DrawText(companies[0].results[0].timestamp.ToString("MM/dd/yyyy"), i*(chartWidth/(float)6), chartHeight +30, smallTextColor);
             }
             
             // Y axis labels
             for (int i = 0; i < 6; i++)
             {
-                canvas.DrawText(Math.Round((i * valueSize) / 5, 2).ToString(), 21f * chartWidth+10, (chartHeight * ((5 - i) / (float)5)) + 15, textColor);
-                canvas.DrawLine(0, (chartHeight * ((5 - i) / (float)5)) + 10, 21f * chartWidth, (chartHeight * ((5 - i) / (float)5)) + 10, lightGrayColor);
+                canvas.DrawText(Math.Round((i * valueSize) / 5, 2).ToString(), chartWidth+5, (chartHeight * ((5 - i) / (float)5))+10, textColor);
+                canvas.DrawLine(0, (chartHeight * ((5 - i) / (float)5)), chartWidth, (chartHeight * ((5 - i) / (float)5)), lightGrayColor);
             }
         }
     }
