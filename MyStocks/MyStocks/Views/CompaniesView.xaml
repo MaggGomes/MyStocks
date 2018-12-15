@@ -17,7 +17,7 @@
             <ListView.RowHeight>
                 <OnPlatform x:TypeArguments="x:Int32">
                     <On Platform="Android">75</On>
-                    <On Platform="UWP">180</On>
+                    <On Platform="UWP">120</On>
                 </OnPlatform>
             </ListView.RowHeight>
 
@@ -53,13 +53,21 @@
                                        FontSize="12" />
                             </StackLayout>
 
-                            <Switch IsToggled="{Binding Selected}" VerticalOptions="Center" Grid.Column="2"/>
+                            <Switch IsToggled="{Binding Selected}" 
+                                    VerticalOptions="Center" 
+                                    HorizontalOptions="End"
+                                    Grid.Column="2"/>
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Text="Generate Graphic" Grid.Row="1" Clicked="GenerateGraphic"></Button>
+        <Button Text="Generate Graphic"
+                BackgroundColor="#0099ff"
+                BorderColor="#0099ff"
+                TextColor="White"
+                Grid.Row="1" 
+                Clicked="GenerateGraphic"></Button>
     </Grid>
 </ContentPage>

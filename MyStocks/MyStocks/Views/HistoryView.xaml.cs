@@ -42,17 +42,20 @@ namespace MyStocks.Views
 
         private float getMax()
         {
-            float max = 0;
+            var companies = history.CompaniesHistory.ToList();
+            float maxQuote = 0;
 
-            for (int i = 0; i < history.CompaniesHistory.Count; i++)
+            for (int i = 0; i < companies.Count; i++)
             {
-                for (int j = 0; j < history.CompaniesHistory[i].results.Count; j++)
+                var quote = companies[i].results.OrderByDescending(x => x.close).First().close;
+
+                if (quote > maxQuote)
                 {
-                    if (history.CompaniesHistory[i].results[j].close > max)
-                        max = history.CompaniesHistory[i].results[j].close;
+                    maxQuote = quote;
                 }
             }
-            return max;
+
+            return maxQuote;
         }
 
         void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -90,13 +93,13 @@ namespace MyStocks.Views
             SKPaint yellowColor = new SKPaint
             {
                 Style = SKPaintStyle.Fill,
-                Color = Color.FromRgba(240, 236, 213, 180).ToSKColor(),
+                Color = Color.FromRgba(240, 236, 213, 120).ToSKColor(),
             };
 
             SKPaint blueColor = new SKPaint
             {
                 Style = SKPaintStyle.Fill,
-                Color = Color.FromRgba(219, 237, 242, 180).ToSKColor()
+                Color = Color.FromRgba(219, 237, 242, 120).ToSKColor()
             };
 
             SKPaint yellowTrace = new SKPaint
@@ -157,40 +160,44 @@ namespace MyStocks.Views
 
             // Height (in pixels)
             var height = mainDisplayInfo.Height;
-            
-            var valueSize = getMax();
-            var chartWidth = (float)width-100f;
+
+            // Chart size
+            var chartWidth = (float)width - 100f;
             var chartHeight = (float)height / 2;
+
+            var maxQuote = getMax();
+
+            Debug.WriteLine("maxquote: " + maxQuote);
 
             for (int k = 0; k < companies.Count; k++)
             {
-                var company = companies[k];
-
                 var invisiblePath = new SKPath();
                 using (var path = new SKPath())
                 {
-                    var minQuote = companies[k].results.OrderBy(x => x.close).First().close;
-                    var maxQuote = companies[k].results.OrderByDescending(x => x.close).First().close;
-                    var quoteDiff = maxQuote - minQuote;
+                    invisiblePath.MoveTo(0, chartHeight);
 
-                    invisiblePath.MoveTo(0, (int)chartHeight);
-                    
-                    for (int i = 0; i < company.results.Count; i++)
+                    for (int i = 0; i < companies[k].results.Count; i++)
                     {
-                        invisiblePath.LineTo(i * chartWidth / (company.results.Count - 1), ((company.results[i].close - minQuote) * chartHeight / quoteDiff));
+                        invisiblePath.LineTo(i * chartWidth / (companies[k].results.Count - 1), maxQuote - companies[k].results[i].close);
+                        
+                        Debug.WriteLine("coord y: " + (maxQuote - companies[k].results[i].close));
 
                         if (i == 0)
                         {
-                            path.MoveTo(i * chartWidth / (company.results.Count - 1), ((company.results[i].close - minQuote) * chartHeight / quoteDiff));
+                            path.MoveTo(i * chartWidth / (companies[k].results.Count - 1), maxQuote - companies[k].results[i].close);
                         }
 
                         else
                         {
-                            path.LineTo(i * chartWidth / (company.results.Count - 1), ((company.results[i].close - minQuote) * chartHeight / quoteDiff));
+                            path.LineTo(i * chartWidth / (companies[k].results.Count - 1), maxQuote - companies[k].results[i].close);
                         }
+
+                        Debug.WriteLine(companies[k].results[i].close);
+                        Debug.WriteLine(companies[k].results[i].timestamp.ToString("MM/dd/yyyy"));
+                        canvas.DrawText(Math.Round(companies[k].results[i].close, 2).ToString(), i * chartWidth / (companies[k].results.Count - 1), maxQuote - companies[k].results[i].close, smallTextColor);
                     }
-                
-                    invisiblePath.LineTo(company.results.Count * chartWidth / (company.results.Count), chartHeight);
+
+                    invisiblePath.LineTo(chartWidth, chartHeight);
                     canvas.DrawPath(path, traceColors[k]);
                     canvas.DrawPath(invisiblePath, white);
                     canvas.DrawPath(invisiblePath, fillColors[k]);
@@ -206,7 +213,7 @@ namespace MyStocks.Views
             // Y axis labels
             for (int i = 0; i < 6; i++)
             {
-                canvas.DrawText(Math.Round((i * valueSize) / 5, 2).ToString(), chartWidth+5, (chartHeight * ((5 - i) / (float)5))+10, textColor);
+                canvas.DrawText(Math.Round((i * maxQuote) / 5, 2).ToString(), chartWidth+5, (chartHeight * ((5 - i) / (float)5))+10, textColor);
                 canvas.DrawLine(0, (chartHeight * ((5 - i) / (float)5)), chartWidth, (chartHeight * ((5 - i) / (float)5)), lightGrayColor);
             }
         }

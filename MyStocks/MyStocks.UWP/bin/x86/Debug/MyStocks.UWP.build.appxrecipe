@@ -565,6 +565,12 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\amd.png">
+      <PackagePath>amd.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\apple.png">
+      <PackagePath>apple.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
@@ -672,6 +678,30 @@
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\facebook.png">
+      <PackagePath>facebook.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\google.png">
+      <PackagePath>google.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\hp.png">
+      <PackagePath>hp.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\ibm.png">
+      <PackagePath>ibm.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\intel.png">
+      <PackagePath>intel.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\microsoft.png">
+      <PackagePath>microsoft.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\oracle.png">
+      <PackagePath>oracle.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\twitter.png">
+      <PackagePath>twitter.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>

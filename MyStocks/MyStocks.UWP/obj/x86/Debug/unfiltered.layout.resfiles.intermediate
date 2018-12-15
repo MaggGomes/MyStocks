@@ -1,4 +1,6 @@
 WinMetadata\Windows.winmd
+amd.png
+apple.png
 Assets\LargeTile.scale-100.png
 Assets\LargeTile.scale-200.png
 Assets\LargeTile.scale-400.png
@@ -29,4 +31,12 @@ Assets\Wide310x150Logo.scale-400.png
 App.xbf
 MainPage.xbf
 MyStocks.UWP.xr.xml
+facebook.png
+google.png
+hp.png
+ibm.png
+intel.png
+microsoft.png
+oracle.png
 Properties\Default.rd.xml
+twitter.png

@@ -104,11 +104,20 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="amd.png" />
-    <AndroidResource Include="apple.png" />
+    <Content Include="amd.png" />
+    <Content Include="apple.png" />
+    <AndroidResource Include="Assets\amd.png" />
+    <AndroidResource Include="Assets\apple.png" />
+    <AndroidResource Include="Assets\facebook.png" />
+    <AndroidResource Include="Assets\google.png" />
+    <AndroidResource Include="Assets\hp.png" />
+    <AndroidResource Include="Assets\ibm.png" />
+    <AndroidResource Include="Assets\intel.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <AndroidResource Include="Assets\microsoft.png" />
+    <AndroidResource Include="Assets\oracle.png" />
     <Content Include="Assets\SmallTile.scale-100.png" />
     <Content Include="Assets\SmallTile.scale-200.png" />
     <Content Include="Assets\SmallTile.scale-400.png" />
@@ -130,18 +139,19 @@
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-200.png" />
     <Content Include="Assets\StoreLogo.scale-400.png" />
+    <AndroidResource Include="Assets\twitter.png" />
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
-    <AndroidResource Include="facebook.png" />
-    <AndroidResource Include="google.png" />
-    <AndroidResource Include="hp.png" />
-    <AndroidResource Include="ibm.png" />
-    <AndroidResource Include="intel.png" />
-    <AndroidResource Include="microsoft.png" />
-    <AndroidResource Include="oracle.png" />
+    <Content Include="facebook.png" />
+    <Content Include="google.png" />
+    <Content Include="hp.png" />
+    <Content Include="ibm.png" />
+    <Content Include="intel.png" />
+    <Content Include="microsoft.png" />
+    <Content Include="oracle.png" />
     <Content Include="Properties\Default.rd.xml" />
-    <AndroidResource Include="twitter.png" />
+    <Content Include="twitter.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

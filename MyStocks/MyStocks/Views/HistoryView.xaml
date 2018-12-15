@@ -5,6 +5,6 @@
              x:Class="MyStocks.Views.HistoryView"
              Title="Stock History">
     <StackLayout>
-        <skia:SKCanvasView x:Name="Graph" PaintSurface="OnCanvasViewPaintSurface" HeightRequest="1000" Margin="10"/>
+        <skia:SKCanvasView x:Name="Graph" PaintSurface="OnCanvasViewPaintSurface" HeightRequest="1000" Margin="0, 20, 0, 20"/>
     </StackLayout>
 </ContentPage>

@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-12-15T17:45:52.904</Modified>
+      <Modified>2018-12-15T20:22:50.262</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\MyStocks.UWP.exe">
       <PackagePath>entrypoint\MyStocks.UWP.exe</PackagePath>
-      <Modified>2018-12-15T17:45:52.041</Modified>
+      <Modified>2018-12-15T20:22:49.600</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\.nuget\packages\newtonsoft.json\12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -748,11 +748,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks\bin\Debug\netstandard2.0\MyStocks.dll">
       <PackagePath>MyStocks.dll</PackagePath>
-      <Modified>2018-12-15T17:45:46.785</Modified>
+      <Modified>2018-12-15T20:22:44.031</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\bin\10.0.17763.0\XamlCompiler\Microsoft.UI.Xaml.Markup.winmd">
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2018-10-23T01:33:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\amd.png">
+      <PackagePath>amd.png</PackagePath>
+      <Modified>2018-12-06T00:51:30.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\apple.png">
+      <PackagePath>apple.png</PackagePath>
+      <Modified>2018-12-06T00:51:30.579</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -889,6 +897,38 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-12-01T02:36:10.936</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\facebook.png">
+      <PackagePath>facebook.png</PackagePath>
+      <Modified>2018-12-06T00:51:30.601</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\google.png">
+      <PackagePath>google.png</PackagePath>
+      <Modified>2018-12-06T00:51:30.607</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\hp.png">
+      <PackagePath>hp.png</PackagePath>
+      <Modified>2018-12-06T00:51:30.612</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\ibm.png">
+      <PackagePath>ibm.png</PackagePath>
+      <Modified>2018-12-06T00:51:30.616</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\intel.png">
+      <PackagePath>intel.png</PackagePath>
+      <Modified>2018-12-06T00:51:30.624</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\microsoft.png">
+      <PackagePath>microsoft.png</PackagePath>
+      <Modified>2018-12-06T00:51:30.628</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\oracle.png">
+      <PackagePath>oracle.png</PackagePath>
+      <Modified>2018-12-06T00:51:30.631</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\twitter.png">
+      <PackagePath>twitter.png</PackagePath>
+      <Modified>2018-12-06T00:51:30.635</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2018-12-01T02:36:10.987</Modified>
@@ -899,11 +939,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-12-15T17:45:51.849</Modified>
+      <Modified>2018-12-15T20:22:49.422</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-12-15T17:45:51.849</Modified>
+      <Modified>2018-12-15T20:22:49.423</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -915,11 +955,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2018-12-09T20:15:22.371</Modified>
+      <Modified>2018-12-15T20:21:19.897</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\Core\MyStocks.UWP.exe">
       <PackagePath>MyStocks.UWP.exe</PackagePath>
-      <Modified>2018-12-15T17:45:52.855</Modified>
+      <Modified>2018-12-15T20:22:50.258</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
