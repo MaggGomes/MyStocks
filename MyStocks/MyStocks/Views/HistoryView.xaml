@@ -4,7 +4,30 @@
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="MyStocks.Views.HistoryView"
              Title="Stock History">
-    <StackLayout>
-        <skia:SKCanvasView x:Name="Graph" PaintSurface="OnCanvasViewPaintSurface" HeightRequest="1000" Margin="0, 20, 0, 20"/>
-    </StackLayout>
+
+    <Grid RowSpacing="0" ColumnSpacing="0">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Grid.Row="0" Grid.Column="0">
+            <skia:SKCanvasView x:Name="Graph" PaintSurface="OnCanvasViewPaintSurface" HeightRequest="1000" Margin="0, 20, 0, 20"/>
+        </StackLayout>
+
+        <Button Text="Generate Graphic"
+                BackgroundColor="#0099ff"
+                BorderColor="#0099ff"
+                TextColor="White"
+                Grid.Row="1"
+                Grid.Column="0"></Button>
+
+    </Grid>
+
+    
 </ContentPage>

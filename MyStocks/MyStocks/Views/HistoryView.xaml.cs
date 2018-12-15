@@ -167,8 +167,6 @@ namespace MyStocks.Views
 
             var maxQuote = getMax();
 
-            Debug.WriteLine("maxquote: " + maxQuote);
-
             for (int k = 0; k < companies.Count; k++)
             {
                 var invisiblePath = new SKPath();
@@ -178,23 +176,17 @@ namespace MyStocks.Views
 
                     for (int i = 0; i < companies[k].results.Count; i++)
                     {
-                        invisiblePath.LineTo(i * chartWidth / (companies[k].results.Count - 1), maxQuote - companies[k].results[i].close);
-                        
-                        Debug.WriteLine("coord y: " + (maxQuote - companies[k].results[i].close));
-
+                        invisiblePath.LineTo(i * chartWidth / (companies[k].results.Count - 1), ((maxQuote - companies[k].results[i].close)*chartHeight)/ maxQuote);
+                       
                         if (i == 0)
                         {
-                            path.MoveTo(i * chartWidth / (companies[k].results.Count - 1), maxQuote - companies[k].results[i].close);
+                            path.MoveTo(i * chartWidth / (companies[k].results.Count - 1), ((maxQuote - companies[k].results[i].close) * chartHeight) / maxQuote);
                         }
 
                         else
                         {
-                            path.LineTo(i * chartWidth / (companies[k].results.Count - 1), maxQuote - companies[k].results[i].close);
+                            path.LineTo(i * chartWidth / (companies[k].results.Count - 1), ((maxQuote - companies[k].results[i].close) * chartHeight) / maxQuote);
                         }
-
-                        Debug.WriteLine(companies[k].results[i].close);
-                        Debug.WriteLine(companies[k].results[i].timestamp.ToString("MM/dd/yyyy"));
-                        canvas.DrawText(Math.Round(companies[k].results[i].close, 2).ToString(), i * chartWidth / (companies[k].results.Count - 1), maxQuote - companies[k].results[i].close, smallTextColor);
                     }
 
                     invisiblePath.LineTo(chartWidth, chartHeight);
@@ -203,7 +195,8 @@ namespace MyStocks.Views
                     canvas.DrawPath(invisiblePath, fillColors[k]);
                 }
             }
-
+            
+            
             // X axis labels
             for (int i = 0; i < 6; i++)
             {
@@ -213,7 +206,7 @@ namespace MyStocks.Views
             // Y axis labels
             for (int i = 0; i < 6; i++)
             {
-                canvas.DrawText(Math.Round((i * maxQuote) / 5, 2).ToString(), chartWidth+5, (chartHeight * ((5 - i) / (float)5))+10, textColor);
+                canvas.DrawText(Math.Round((i * maxQuote) / 5, 2).ToString(), chartWidth+5, (chartHeight * ((5 - i) / (float)5))+15, textColor);
                 canvas.DrawLine(0, (chartHeight * ((5 - i) / (float)5)), chartWidth, (chartHeight * ((5 - i) / (float)5)), lightGrayColor);
             }
         }
