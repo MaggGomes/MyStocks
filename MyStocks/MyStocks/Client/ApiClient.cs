@@ -44,19 +44,14 @@ namespace MyStocks.Client
         public static async Task<ResponseCompaniesHistory> getHistory(string frequency, string symbol)
         {
             var query = string.Format(baseUrl + "{0}apikey={1}&symbol={2}&type={3}&startDate=20171002", apiGetHistory, apiKey, symbol, frequency);
-            Debug.WriteLine(query);
-
             HttpResponseMessage response = await client.GetAsync(query);
             
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 string json = await response.Content.ReadAsStringAsync();
-                Debug.WriteLine(json);
                 return JsonConvert.DeserializeObject<ResponseCompaniesHistory>(json);
             }
 
-            Debug.WriteLine("não");
-           
             return null;
         }
     }

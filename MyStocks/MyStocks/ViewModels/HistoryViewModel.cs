@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Collections;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 using MyStocks.Models;
 using MyStocks.Client;
@@ -36,7 +38,7 @@ namespace MyStocks.ViewModels
             CompaniesQuotes = responses;
         }
 
-        public async Task GetHistory()
+        public async Task GetHistory(int points)
         {
             Loading = true;
             ObservableCollection<ResponseCompaniesHistory> responses = new ObservableCollection<ResponseCompaniesHistory>();
@@ -47,6 +49,22 @@ namespace MyStocks.ViewModels
 
                 if (response != null)
                 {
+                    List<CompanyDetails> results = new List<CompanyDetails>();
+
+                    Debug.WriteLine("points:" + points);
+                    Debug.WriteLine("count:" + response.results.Count);
+                    Debug.WriteLine("count:" + (response.results.Count-points));
+
+
+
+                    for (int i = response.results.Count-points; i < response.results.Count; i++)
+                    {
+                        results.Add(response.results[i]);
+                        Debug.WriteLine(i);
+                    }
+
+                    response.results = results;
+
                     responses.Add(response);
                 }
             }

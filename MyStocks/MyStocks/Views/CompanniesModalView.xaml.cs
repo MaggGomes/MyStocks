@@ -17,7 +17,7 @@ namespace MyStocks.Views
 	public partial class CompanniesModalView
 	{
         string frequency = "Daily";
-        int points = 0;
+        int points = 7;
         List<Company> companiesSelected = new List<Company>();
 		public CompanniesModalView (List<Company> companiesSelected)
 		{

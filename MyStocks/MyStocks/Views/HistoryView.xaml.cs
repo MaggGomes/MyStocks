@@ -37,7 +37,7 @@ namespace MyStocks.Views
         {
             base.OnAppearing();
             await history.GetQuote();
-            await history.GetHistory();
+            await history.GetHistory(numberOfPoints);
             Graph.InvalidateSurface();
         }
 
