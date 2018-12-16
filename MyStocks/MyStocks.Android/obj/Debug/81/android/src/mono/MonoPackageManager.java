@@ -110,6 +110,8 @@ class MonoPackageManager_Resources {
 		"FormsViewGroup.dll",
 		"MyStocks.dll",
 		"Newtonsoft.Json.dll",
+		"Rg.Plugins.Popup.dll",
+		"Rg.Plugins.Popup.Droid.dll",
 		"SkiaSharp.dll",
 		"SkiaSharp.Views.Android.dll",
 		"SkiaSharp.Views.Forms.dll",

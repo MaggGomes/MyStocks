@@ -312,3 +312,7 @@ C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\Xamarin.Essentials.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\Xamarin.Essentials.pdb
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\obj\x86\Debug\Xamarin.Essentials.pri.xml
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\Rg.Plugins.Popup.UWP.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\Rg.Plugins.Popup.UWP.pdb
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\Rg.Plugins.Popup.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.UWP\bin\x86\Debug\Rg.Plugins.Popup.pdb

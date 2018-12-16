@@ -1,6 +1,8 @@
 FormsViewGroup
 MyStocks
 Newtonsoft.Json
+Rg.Plugins.Popup
+Rg.Plugins.Popup.Droid
 SkiaSharp
 SkiaSharp.Views.Android
 SkiaSharp.Views.Forms
@@ -31,3 +33,4 @@ Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 netstandard
+System.Reflection.Extensions

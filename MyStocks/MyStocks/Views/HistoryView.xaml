@@ -29,9 +29,9 @@
                          HeightRequest="15"
                          VerticalOptions="Center"
                          HorizontalOptions="Center" />
-                <Label x:Name="Company1Text" WidthRequest="90" Text="Compannie" FontSize="10" VerticalOptions="Center" Margin="0, 0, 5, 0"/>
-                <Label x:Name="Company1Quote" WidthRequest="120" Text="200 USD" FontSize="10" VerticalOptions="Center"/>
-                <Label x:Name="Company1Percent" WidthRequest="90" Text="200 USD" FontSize="10" VerticalOptions="Center"/>
+                <Label x:Name="Company1Text" WidthRequest="90" Text="Compannie" FontSize="12" VerticalOptions="Center" Margin="0, 0, 2, 0"/>
+                <Label x:Name="Company1Quote" WidthRequest="130" Text="200 USD" FontSize="12" VerticalOptions="Center"/>
+                <Label x:Name="Company1Percent" WidthRequest="90" Text="200 USD" FontSize="12" VerticalOptions="Center"/>
                 <Button Text="+"
                         BackgroundColor="#0099ff"
                         BorderColor="#0099ff"
@@ -50,9 +50,9 @@
                          VerticalOptions="Center"
                          HorizontalOptions="Center" />
                 
-                <Label x:Name="Company2Text" WidthRequest="90" Text="Compannie" FontSize="10" VerticalOptions="Center" Margin="0, 0, 5, 0"/>
-                <Label x:Name="Company2Quote" WidthRequest="120" Text="200 USD" FontSize="10" VerticalOptions="Center"/>
-                <Label x:Name="Company2Percent" WidthRequest="90" Text="200 USD" FontSize="10" VerticalOptions="Center"/>
+                <Label x:Name="Company2Text" WidthRequest="90" Text="Compannie" FontSize="12" VerticalOptions="Center" Margin="0, 0, 2, 0"/>
+                <Label x:Name="Company2Quote" WidthRequest="130" Text="200 USD" FontSize="12" VerticalOptions="Center"/>
+                <Label x:Name="Company2Percent" WidthRequest="90" Text="200 USD" FontSize="12" VerticalOptions="Center"/>
                 <Button Text="+"
                         BackgroundColor="#0099ff"
                         BorderColor="#0099ff"

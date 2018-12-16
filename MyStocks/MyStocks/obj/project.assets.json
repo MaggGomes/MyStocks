@@ -35,6 +35,18 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Rg.Plugins.Popup/1.1.5.180": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.121934"
+        },
+        "compile": {
+          "lib/netstandard1.0/Rg.Plugins.Popup.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Rg.Plugins.Popup.dll": {}
+        }
+      },
       "SkiaSharp/1.68.0": {
         "type": "package",
         "compile": {
@@ -301,6 +313,36 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.12.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "Rg.Plugins.Popup/1.1.5.180": {
+      "sha512": "/UROZ5HlAgDwRzkrERUu9i4bnfZ3wisgK0H8yWcXprXH6DcfZUkIhr6JJh9DpVqDJ7Z54JIOjk52zNJPCn+zdg==",
+      "type": "package",
+      "path": "rg.plugins.popup/1.1.5.180",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.dll",
+        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.pdb",
+        "lib/MonoAndroid/Rg.Plugins.Popup.dll",
+        "lib/MonoAndroid/Rg.Plugins.Popup.pdb",
+        "lib/MonoTouch/Rg.Plugins.Popup.IOS.dll",
+        "lib/MonoTouch/Rg.Plugins.Popup.IOS.pdb",
+        "lib/MonoTouch/Rg.Plugins.Popup.dll",
+        "lib/MonoTouch/Rg.Plugins.Popup.pdb",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.pdb",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.dll",
+        "lib/Xamarin.IOS/Rg.Plugins.Popup.pdb",
+        "lib/netstandard1.0/Rg.Plugins.Popup.dll",
+        "lib/netstandard1.0/Rg.Plugins.Popup.pdb",
+        "lib/uap10.0/Rg.Plugins.Popup.UWP.dll",
+        "lib/uap10.0/Rg.Plugins.Popup.UWP.pdb",
+        "lib/uap10.0/Rg.Plugins.Popup.dll",
+        "lib/uap10.0/Rg.Plugins.Popup.pdb",
+        "readme.txt",
+        "rg.plugins.popup.1.1.5.180.nupkg.sha512",
+        "rg.plugins.popup.nuspec"
       ]
     },
     "SkiaSharp/1.68.0": {
@@ -610,6 +652,7 @@
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.1",
+      "Rg.Plugins.Popup >= 1.1.5.180",
       "SkiaSharp.Views.Forms >= 1.68.0",
       "Xamarin.Essentials >= 1.0.0",
       "Xamarin.Forms >= 3.3.0.967583"
@@ -665,6 +708,10 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.1, )"
+          },
+          "Rg.Plugins.Popup": {
+            "target": "Package",
+            "version": "[1.1.5.180, )"
           },
           "SkiaSharp.Views.Forms": {
             "target": "Package",

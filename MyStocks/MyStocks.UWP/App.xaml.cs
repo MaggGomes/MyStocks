@@ -30,6 +30,7 @@ namespace MyStocks.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            Rg.Plugins.Popup.Popup.Init();
         }
 
         /// <summary>

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "fa777d85d6a8cf99c79dab9514a47b47b0feffad"
+    "signature": "d2c3a03440620fd52a97f9b9fa3e7a7cf50cc062"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,6 +11,7 @@
         "dependencies": {
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.1",
+          "Rg.Plugins.Popup": "1.1.5.180",
           "SkiaSharp.Views.Forms": "1.68.0",
           "Xamarin.Essentials": "1.0.0",
           "Xamarin.Forms": "3.3.0.967583"
@@ -30,6 +31,17 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.0.1.22727"
+          }
+        }
+      },
+      "Rg.Plugins.Popup/1.1.5.180": {
+        "dependencies": {
+          "Xamarin.Forms": "3.3.0.967583"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Rg.Plugins.Popup.dll": {
+            "assemblyVersion": "1.1.5.180",
+            "fileVersion": "1.1.5.180"
           }
         }
       },
@@ -116,6 +128,13 @@
       "sha512": "sha512-jmVyoEyk0In8r+AObYQyFKVFm7uSRzE0XSHSbEtBJcZDMV6DqJoyB4FLcHwprPVhAh826so0db3DIKXVnpGoPA==",
       "path": "newtonsoft.json/12.0.1",
       "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
+    },
+    "Rg.Plugins.Popup/1.1.5.180": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/UROZ5HlAgDwRzkrERUu9i4bnfZ3wisgK0H8yWcXprXH6DcfZUkIhr6JJh9DpVqDJ7Z54JIOjk52zNJPCn+zdg==",
+      "path": "rg.plugins.popup/1.1.5.180",
+      "hashPath": "rg.plugins.popup.1.1.5.180.nupkg.sha512"
     },
     "SkiaSharp/1.68.0": {
       "type": "package",

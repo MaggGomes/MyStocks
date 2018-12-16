@@ -5,6 +5,8 @@ C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\mscorlib.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\MyStocks.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\Newtonsoft.Json.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\Rg.Plugins.Popup.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\Rg.Plugins.Popup.Droid.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\SkiaSharp.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\SkiaSharp.Views.Android.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\SkiaSharp.Views.Forms.dll
@@ -50,4 +52,12 @@ C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.ComponentModel.Composition.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Web.Services.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Runtime.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Threading.Tasks.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Collections.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Diagnostics.Debug.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Reflection.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Linq.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Threading.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Runtime.Extensions.dll
+C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\System.Reflection.Extensions.dll
 C:\Users\Manuel Gomes\Documents\FEUP\CMOV\MyStocks\MyStocks\MyStocks.Android\obj\Debug\81\android\assets\Mono.Security.dll

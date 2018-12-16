@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
+using Rg.Plugins.Popup.Services;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -44,7 +45,9 @@ namespace MyStocks.Views
             }
             else
             {
-                await Navigation.PushAsync(new HistoryView(companiesSelected, "20181002", 7));
+                //await Navigation.PushAsync(new HistoryView(companiesSelected, "20181002", 7));
+
+                PopupNavigation.Instance.PushAsync(new CompanniesModalView());
             }
         }
     }
