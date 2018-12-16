@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyStocks.Views.CompanyView"
+             Title="">
+    <ContentPage.Content>
+        <ScrollView Margin="10, 0, 10, 0">
+            <StackLayout Orientation="Vertical">
+                <StackLayout
+                    Grid.Row="0"
+                    Orientation="Horizontal"
+                    HeightRequest="70">
+
+                    <Label 
+                        Grid.Column="0"
+                        Text="Symbol"
+                        FontSize="18"
+                        TextColor="Black"
+                        WidthRequest="200"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"/>
+                    <Label 
+                        Grid.Column="1"
+                        Text="{Binding symbol}"
+                        FontSize="16"
+                        TextColor="Gray"
+                        WidthRequest="100"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"/>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="1"
+                    Orientation="Horizontal"
+                    HeightRequest="70">
+                    <Label 
+                        Grid.Column="0"
+                        Text="Exchange"
+                        FontSize="18"
+                        TextColor="Black"
+                        WidthRequest="200"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"/>
+                    <Label 
+                        Grid.Column="1"
+                        Text="{Binding exchange}"
+                        FontSize="16"
+                        TextColor="Gray"
+                        WidthRequest="100"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"/>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="2"
+                    Orientation="Horizontal"
+                    HeightRequest="70">
+                    <Label 
+                        Grid.Column="0"
+                        Text="Last Price"
+                        FontSize="18"
+                        TextColor="Black"
+                        WidthRequest="200"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"/>
+                    <Label 
+                        Grid.Column="1"
+                        Text="{Binding lastPrice}"
+                        FontSize="16"
+                        TextColor="Gray"
+                        WidthRequest="100"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"/>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="3"
+                    Orientation="Horizontal"
+                    HeightRequest="70">
+                    <Label 
+                        Grid.Column="0"
+                        FontSize="18"
+                        TextColor="Black"
+                        WidthRequest="200"
+                        Text="Net Change"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"/>
+                    <Label 
+                        Grid.Column="1"
+                        Text="{Binding netChange}"
+                        FontSize="16"
+                        TextColor="Gray"
+                        WidthRequest="100"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"/>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="4"
+                    Orientation="Horizontal"
+                    HeightRequest="70">
+                    <Label 
+                        Grid.Column="0"
+                        FontSize="18"
+                        TextColor="Black"
+                        WidthRequest="200"
+                        Text="Percent Change"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"/>
+                    <Label 
+                        Grid.Column="1"
+                        Text="{Binding percentChange}"
+                        FontSize="16"
+                        TextColor="Gray"
+                        WidthRequest="100"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"/>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="5"
+                    Orientation="Horizontal"
+                    HeightRequest="70">
+                    <Label 
+                        Grid.Column="0"
+                        Text="Open"
+                        FontSize="18"
+                        TextColor="Black"
+                        WidthRequest="200"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"/>
+                    <Label 
+                        Grid.Column="1"
+                        Text="{Binding open}"
+                        FontSize="16"
+                        TextColor="Gray"
+                        WidthRequest="100"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"/>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="6"
+                    Orientation="Horizontal"
+                    HeightRequest="70">
+                    <Label 
+                        Grid.Column="0"
+                        Text="High"
+                        FontSize="18"
+                        TextColor="Black"
+                        WidthRequest="200"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"/>
+                    <Label 
+                        Grid.Column="1"
+                        Text="{Binding high}"
+                        FontSize="16"
+                        TextColor="Gray"
+                        WidthRequest="100"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"/>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="7"
+                    Orientation="Horizontal"
+                    HeightRequest="70">
+                    <Label 
+                        Grid.Column="0"
+                        Text="Low"
+                        FontSize="18"
+                        TextColor="Black"
+                        WidthRequest="200"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"/>
+                    <Label 
+                        Grid.Column="1"
+                        Text="{Binding low}"
+                        FontSize="16"
+                        TextColor="Gray"
+                        WidthRequest="100"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"/>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="8"
+                    Orientation="Horizontal"
+                    HeightRequest="70">
+                    <Label 
+                        Grid.Column="0"
+                        Text="Close"
+                        FontSize="18"
+                        TextColor="Black"
+                        WidthRequest="200"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"/>
+                    <Label 
+                        Grid.Column="1"
+                        Text="{Binding close}"
+                        FontSize="16"
+                        TextColor="Gray"
+                        WidthRequest="100"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"/>
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="9"
+                    Orientation="Horizontal"
+                    HeightRequest="70">
+                    <Label 
+                        Grid.Column="0"
+                        Text="Volume"
+                        FontSize="18"
+                        TextColor="Black"
+                        WidthRequest="200"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"/>
+                    <Label 
+                        Grid.Column="1"
+                        Text="{Binding volume}"
+                        FontSize="16"
+                        TextColor="Gray"
+                        WidthRequest="100"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

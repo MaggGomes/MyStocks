@@ -20,31 +20,47 @@
             <skia:SKCanvasView x:Name="Graph" PaintSurface="OnCanvasViewPaintSurface" HeightRequest="1000" Margin="0, 20, 0, 20"/>
         </StackLayout>
 
-        <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" Margin="10, 0, 0, 20">
+        <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" VerticalOptions="Start" Margin="10, 0, 10, 20">
             <StackLayout x:Name="Company1" Orientation="Horizontal" IsVisible="False">
                 <BoxView Color="#E6C94B"
                          Margin="0, 0, 5, 0"
                          CornerRadius="10"
-                         WidthRequest="55"
-                         HeightRequest="25"
+                         WidthRequest="20"
+                         HeightRequest="15"
                          VerticalOptions="Center"
                          HorizontalOptions="Center" />
-                <Label x:Name="Company1Text" WidthRequest="100" Text="Compannie" FontSize="12" VerticalOptions="Center" Margin="0, 0, 5, 0"/>
-                <Label x:Name="Company1Quote" WidthRequest="120" Text="200 USD" FontSize="12" VerticalOptions="Center"/>
-                <Label x:Name="Company1Percent" WidthRequest="90" Text="200 USD" FontSize="12" VerticalOptions="Center"/>
+                <Label x:Name="Company1Text" WidthRequest="90" Text="Compannie" FontSize="10" VerticalOptions="Center" Margin="0, 0, 5, 0"/>
+                <Label x:Name="Company1Quote" WidthRequest="120" Text="200 USD" FontSize="10" VerticalOptions="Center"/>
+                <Label x:Name="Company1Percent" WidthRequest="90" Text="200 USD" FontSize="10" VerticalOptions="Center"/>
+                <Button Text="+"
+                        BackgroundColor="#0099ff"
+                        BorderColor="#0099ff"
+                        TextColor="White"
+                        FontSize="10"
+                        WidthRequest="40"
+                        HeightRequest="30"
+                        Clicked="SeeDetails1"></Button> 
             </StackLayout>
             <StackLayout x:Name="Company2" Orientation="Horizontal" IsVisible="False">
                 <BoxView Color="#2DC3D6"
                          Margin="0, 0, 5, 0"
                          CornerRadius="10"
-                         WidthRequest="55"
-                         HeightRequest="25"
+                         WidthRequest="20"
+                         HeightRequest="15"
                          VerticalOptions="Center"
                          HorizontalOptions="Center" />
                 
-                <Label x:Name="Company2Text" WidthRequest="100" Text="Compannie" FontSize="12" VerticalOptions="Center" Margin="0, 0, 5, 0"/>
-                <Label x:Name="Company2Quote" WidthRequest="120" Text="200 USD" FontSize="12" VerticalOptions="Center"/>
-                <Label x:Name="Company2Percent" WidthRequest="90" Text="200 USD" FontSize="12" VerticalOptions="Center"/>
+                <Label x:Name="Company2Text" WidthRequest="90" Text="Compannie" FontSize="10" VerticalOptions="Center" Margin="0, 0, 5, 0"/>
+                <Label x:Name="Company2Quote" WidthRequest="120" Text="200 USD" FontSize="10" VerticalOptions="Center"/>
+                <Label x:Name="Company2Percent" WidthRequest="90" Text="200 USD" FontSize="10" VerticalOptions="Center"/>
+                <Button Text="+"
+                        BackgroundColor="#0099ff"
+                        BorderColor="#0099ff"
+                        TextColor="White"
+                        FontSize="10"
+                        WidthRequest="40"
+                        HeightRequest="30"
+                        Clicked="SeeDetails2"></Button>
             </StackLayout>
         </StackLayout>
 

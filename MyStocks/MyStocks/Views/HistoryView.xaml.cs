@@ -71,21 +71,17 @@ namespace MyStocks.Views
             if (companies.Count == 0 || companies == null)
                 return;
 
-            Company1Text.Text = CompaniesSelected[0].Name;
+            Company1Text.Text = CompaniesSelected[0].Symbol;
             Company1Quote.Text = currentQuotes[0].results[0].lastPrice + " USD";
-
-            Debug.WriteLine(currentQuotes[0].results[0].percentChange);
-
+            
             if (currentQuotes[0].results[0].percentChange >= 0)
             {
-                Debug.WriteLine("sim");
                 Company1Percent.Text = "+"+currentQuotes[0].results[0].percentChange + "%";
                 Company1Percent.TextColor = Color.DarkGreen;
             }
 
             else
             {
-                Debug.WriteLine("no");
                 Company1Percent.Text = currentQuotes[0].results[0].percentChange + "%";
                 Company1Percent.TextColor = Color.DarkRed;
             }
@@ -94,21 +90,17 @@ namespace MyStocks.Views
 
             if(companies.Count == 2)
             {
-                Company2Text.Text = CompaniesSelected[1].Name;
+                Company2Text.Text = CompaniesSelected[1].Symbol;
                 Company2Quote.Text = currentQuotes[0].results[1].lastPrice + " USD";
-
-                Debug.WriteLine(currentQuotes[0].results[1].percentChange);
 
                 if (currentQuotes[0].results[1].percentChange >= 0)
                 {
-                    Debug.WriteLine("sim");
                     Company2Percent.Text = "+" + currentQuotes[0].results[1].percentChange + "%";
                     Company2Percent.TextColor = Color.DarkGreen;
                 }
 
                 else
                 {
-                    Debug.WriteLine("no");
                     Company2Percent.Text = currentQuotes[0].results[1].percentChange + "%";
                     Company2Percent.TextColor = Color.DarkRed;
                 }
@@ -258,6 +250,17 @@ namespace MyStocks.Views
                 
                 canvas.DrawLine(0, (chartHeight * ((5 - i) / (float)5)), chartWidth, (chartHeight * ((5 - i) / (float)5)), lightGrayColor);
             }
+        }
+
+        async void SeeDetails1(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CompanyView(history.CompaniesQuotes.ToList()[0].results[0]));
+
+        }
+
+        async void SeeDetails2(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CompanyView(history.CompaniesQuotes.ToList()[0].results[1]));
         }
     }
 }
