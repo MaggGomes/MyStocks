@@ -14,15 +14,15 @@ namespace MyStocks.ViewModels
         public ObservableCollection<ResponseCompaniesHistory> CompaniesHistory;
         public ObservableCollection<ResponseCompaniesQuote> CompaniesQuotes;
         private List<Company> CompaniesSelected;
-        String date;
+        string frequency;
         public bool Loading { get; set; }
         
-        public HistoryViewModel(List<Company> companies = null, String date = null)
+        public HistoryViewModel(List<Company> companies = null, string frequency = null)
         {
             CompaniesHistory = new ObservableCollection<ResponseCompaniesHistory>();
             CompaniesQuotes = new ObservableCollection<ResponseCompaniesQuote>();
             CompaniesSelected = companies;
-            this.date = date;
+            this.frequency = frequency;
         }
 
         public async Task GetQuote()
@@ -43,7 +43,7 @@ namespace MyStocks.ViewModels
         
             foreach (Company company in CompaniesSelected)
             {
-                ResponseCompaniesHistory response = await ApiClient.getHistory(date, company.Symbol);
+                ResponseCompaniesHistory response = await ApiClient.getHistory(frequency, company.Symbol);
 
                 if (response != null)
                 {

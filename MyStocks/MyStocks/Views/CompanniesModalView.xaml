@@ -8,8 +8,34 @@
                  BackgroundColor="White"
                  VerticalOptions="Center"
                  HorizontalOptions="Center">
-        <StackLayout>
-            <Label Text="aaaaaa"/>
+        <StackLayout
+            WidthRequest="400"
+            HeightRequest="200">
+            <Picker x:Name="frequencyPicker"
+                    HorizontalOptions="FillAndExpand" 
+                    Title="Select the quote frequency:"
+                    SelectedIndexChanged="OnFrequencySelected">
+                <Picker.Items>
+                    <x:String>daily</x:String>
+                    <x:String>weekly</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label
+                Margin="0, 20, 0, 10"
+                Text="Select the number of quotes:"/>
+            <Slider
+                Maximum="30.0"
+                Minimum="7.0"
+                Value="7.0"
+                ThumbColor="Black"
+                BackgroundColor="Gray"
+                ValueChanged="OnSliderValueChanged"/>
+
+            <Button Text="Generate Graphic"
+                BackgroundColor="#0099ff"
+                BorderColor="#0099ff"
+                TextColor="White"
+                Clicked="GenerateHistory"></Button>
         </StackLayout>
     </StackLayout>
 </pages:PopupPage>

@@ -21,16 +21,16 @@ namespace MyStocks.Views
     {
         HistoryViewModel history;
         List<Company> CompaniesSelected;
-        String date;
+        String frequency;
         int numberOfPoints;
 
-        public HistoryView(List<Company> companies, string date, int numberOfPoints)
+        public HistoryView(List<Company> companies, string frequency, int numberOfPoints)
         {
             InitializeComponent();
             this.CompaniesSelected = companies;
-            this.date = date;
+            this.frequency = frequency;
             this.numberOfPoints = numberOfPoints;
-            BindingContext = this.history = new HistoryViewModel(companies, date);
+            BindingContext = this.history = new HistoryViewModel(companies, frequency);
         }
         
         protected async override void OnAppearing()
