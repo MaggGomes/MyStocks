@@ -36,6 +36,7 @@ namespace MyStocks.Views
         protected async override void OnAppearing()
         {
             base.OnAppearing();
+            await history.GetQuote();
             await history.GetHistory();
             Graph.InvalidateSurface();
         }
@@ -64,9 +65,56 @@ namespace MyStocks.Views
                 return;
 
             var companies = history.CompaniesHistory.ToList();
+            var currentQuotes = history.CompaniesQuotes.ToList();
+            
 
             if (companies.Count == 0 || companies == null)
                 return;
+
+            Company1Text.Text = CompaniesSelected[0].Name;
+            Company1Quote.Text = currentQuotes[0].results[0].lastPrice + " USD";
+
+            Debug.WriteLine(currentQuotes[0].results[0].percentChange);
+
+            if (currentQuotes[0].results[0].percentChange >= 0)
+            {
+                Debug.WriteLine("sim");
+                Company1Percent.Text = "+"+currentQuotes[0].results[0].percentChange + "%";
+                Company1Percent.TextColor = Color.DarkGreen;
+            }
+
+            else
+            {
+                Debug.WriteLine("no");
+                Company1Percent.Text = currentQuotes[0].results[0].percentChange + "%";
+                Company1Percent.TextColor = Color.DarkRed;
+            }
+
+            Company1.IsVisible = true;
+
+            if(companies.Count == 2)
+            {
+                Company2Text.Text = CompaniesSelected[1].Name;
+                Company2Quote.Text = currentQuotes[0].results[1].lastPrice + " USD";
+
+                Debug.WriteLine(currentQuotes[0].results[1].percentChange);
+
+                if (currentQuotes[0].results[1].percentChange >= 0)
+                {
+                    Debug.WriteLine("sim");
+                    Company2Percent.Text = "+" + currentQuotes[0].results[1].percentChange + "%";
+                    Company2Percent.TextColor = Color.DarkGreen;
+                }
+
+                else
+                {
+                    Debug.WriteLine("no");
+                    Company2Percent.Text = currentQuotes[0].results[1].percentChange + "%";
+                    Company2Percent.TextColor = Color.DarkRed;
+                }
+
+                Company2.IsVisible = true;
+            }
 
             SKImageInfo info = args.Info;
             SKSurface surface = args.Surface;
@@ -196,17 +244,18 @@ namespace MyStocks.Views
                 }
             }
             
-            
             // X axis labels
-            for (int i = 0; i < 6; i++)
-            {
-                canvas.DrawText(companies[0].results[0].timestamp.ToString("MM/dd/yyyy"), i*(chartWidth/(float)6), chartHeight +30, smallTextColor);
-            }
+            canvas.DrawText(companies[0].results[0].timestamp.ToString("dd/MM/yyyy"), 0, chartHeight + 30, smallTextColor);
+            canvas.DrawText(companies[0].results.Last().timestamp.ToString("dd/MM/yyyy"), chartWidth, chartHeight + 30, smallTextColor);
             
             // Y axis labels
             for (int i = 0; i < 6; i++)
             {
-                canvas.DrawText(Math.Round((i * maxQuote) / 5, 2).ToString(), chartWidth+5, (chartHeight * ((5 - i) / (float)5))+15, textColor);
+                if(i > 0)
+                {
+                    canvas.DrawText(Math.Round((i * maxQuote) / 5, 2).ToString(), chartWidth + 5, (chartHeight * ((5 - i) / (float)5)) + 15, textColor);
+                }
+                
                 canvas.DrawLine(0, (chartHeight * ((5 - i) / (float)5)), chartWidth, (chartHeight * ((5 - i) / (float)5)), lightGrayColor);
             }
         }
